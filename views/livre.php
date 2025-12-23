@@ -1,34 +1,49 @@
 <?php require_once __DIR__ . '/templates/header.php'; ?>
 
+<main class="page-livre">
+  <section class="livre-layout">
 
-
-
-
-<h1>MON livre </h1>
-
-<div>
-
-        <article class="livre-carte">
-            <h3><?php echo htmlspecialchars($livre['title']); ?></h3>
-            <p><?php echo htmlspecialchars($livre['author']); ?></p>
-            <p><?php echo htmlspecialchars($livre['description']); ?></p>
-            
-
-            <?php if (!empty($livre['image'])): ?>
-                <img class="couverture-livre"
-                    src="/projet4/public/images/<?php echo htmlspecialchars($livre['image']); ?>"
-                    alt="Couverture du livre <?php echo htmlspecialchars($livre['title']); ?>"
-                    style="max-width:150px;"
-                >
-            <?php else: ?>
-                <p><em>Aucune image</em></p>
-            <?php endif; ?>
-
-            <p>Ajouté le <?php echo htmlspecialchars($livre['created_at']); ?></p>
-              <p>Par <?php echo htmlspecialchars ($livre['owner_pseudo']); ?></p>
-        </article>
-    
+    <div class="livre-image">
+  <?php if (!empty($livre['image'])) : ?>
+    <img
+      class="livre-image-img"
+      src="/projet4/public/images/<?= htmlspecialchars($livre['image']) ?>"
+      alt="Couverture du livre <?= htmlspecialchars($livre['title']) ?>"
+    >
+  <?php else : ?>
+    <p class="livre-image-absente">Aucune image</p>
+  <?php endif; ?>
 </div>
 
 
-<?php require_once __DIR__ . '/templates/footer.php';
+    <!-- Colonne droite : contenu -->
+    <div class="livre-contenu">
+
+      <h1 class="livre-titre"><?= htmlspecialchars($livre['title']) ?></h1>
+      <p class="livre-auteur">par <?= htmlspecialchars($livre['author']) ?></p>
+
+      <hr class="livre-separateur">
+
+      <h2 class="livre-sous-titre">Description</h2>
+      <p class="livre-description">
+        <?= nl2br(htmlspecialchars($livre['description'])) ?>
+      </p>
+
+      <div class="livre-proprietaire">
+        <p class="livre-proprietaire-label">Proposé par</p>
+
+        <div class="livre-proprietaire-carte">
+          <div class="livre-avatar" aria-hidden="true"></div>
+          <span class="livre-pseudo"><?= htmlspecialchars($livre['owner_pseudo']) ?></span>
+        </div>
+      </div>
+
+      <a class="bouton bouton-principal" href="#">
+        Envoyer un message
+      </a>
+
+    </div>
+  </section>
+</main>
+
+<?php require_once __DIR__ . '/templates/footer.php'; ?>

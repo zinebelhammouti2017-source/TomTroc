@@ -1,23 +1,99 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
-
-.container {
-  max-width: 1000px;
+.page-livre{
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 24px;
+  padding: 40px 16px;
 }
 
-.livre-carte {
-  border: 1px solid #ddd;
-  padding: 12px;
-  margin: 12px 0;
+.livre-layout{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
 }
 
-.couverture-livre {
-  width: 120px;
-  height: 160px;
-  object-fit: cover;
+.livre-image-img{
+  width: 100%;
+  height: auto;
   display: block;
+  border-radius: 18px;
+}
+
+.livre-titre{
+  margin: 0 0 8px;
+}
+
+.livre-auteur{
+  margin: 0 0 18px;
+  opacity: 0.8;
+}
+
+.livre-separateur{
+  border: 0;
+  border-top: 1px solid rgba(0,0,0,0.12);
+  margin: 18px 0 24px;
+}
+
+.livre-sous-titre{
+  margin: 0 0 12px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.livre-description{
+  line-height: 1.7;
+  margin: 0;
+}
+
+.livre-proprietaire{
+  margin-top: 24px;
+}
+
+.livre-proprietaire-label{
+  margin: 0 0 10px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.livre-proprietaire-carte{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.12);
+}
+
+.livre-avatar{
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.12);
+}
+
+.bouton{
+  display: inline-block;
+  padding: 14px 18px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.bouton-principal{
+  margin-top: 18px;
+  width: 100%;
+  text-align: center;
+}
+@media (max-width: 900px){
+  .livre-layout{
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .page-livre{
+    padding: 24px 16px;
+  }
 }

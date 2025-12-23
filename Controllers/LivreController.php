@@ -1,21 +1,25 @@
 <?php
 require_once __DIR__ . '/../models/BookManager.php';
 
-class LivreController {
+class LivreController
+{
+    public function afficherLivre(): void
+    {
+        $id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
 
-    public function afficherLivre():void
-   {
+        if ($id <= 0) {
+            require_once __DIR__ . '/../views/livre_introuvable.php';
+            return;
+        }
 
-    $id= $_GET ['id']?? null;
-    
+        $bookManager = new BookManager();
+        $livre = $bookManager->findOneById($id);
 
-    $bookManager= new BookManager();
-    $livre=$bookManager-> findOneById($id);
-    
-    if ($livre === null) {
-    require_once __DIR__ . '/../views/livre_introuvable.php';
-    return;}
-   
-   require_once __DIR__ . '/../views/livre.php';
-}
+        if ($livre === null) {
+            require_once __DIR__ . '/../views/livre_introuvable.php';
+            return;
+        }
+
+        require_once __DIR__ . '/../views/livre.php';
+    }
 }
