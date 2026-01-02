@@ -1,99 +1,459 @@
-.page-livre{
-  max-width: 1100px;
+/* =========================
+   BASE
+========================= */
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#f6f3ee;
+  color:#111;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* =========================
+   LAYOUT GLOBAL
+========================= */
+.page-accueil,.page-livres,.page-livre{
+  max-width:1100px;
+  margin:0 auto;
+  padding:60px 16px;
+}
+
+/* =========================
+   TITRES (ton projet)
+========================= */
+h1{margin:0 0 12px;font-size:38px;line-height:1.1}
+h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
+
+/* =========================
+   BOUTONS
+========================= */
+.bouton{
+  display:inline-block;
+  padding:14px 26px;
+  border-radius:12px;
+  font-weight:600;
+  border:1px solid transparent;
+  text-align:center;
+}
+.bouton-principal{background:#178f55;color:#fff}
+.bouton-secondaire{background:transparent;color:#178f55;border-color:#178f55}
+
+/* =========================
+   ACCUEIL : HERO
+========================= */
+.accueil-hero{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:48px;
+  align-items:center;
+  margin-bottom:80px;
+}
+.hero-image img{width:100%}
+
+/* =========================
+   GRILLE LIVRES (accueil + page livres)
+========================= */
+.livres-grille{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:50px;
+}
+
+/* =========================
+   CARTE LIVRE (style maquette : texte à gauche, gris, image “flush”)
+========================= */
+.livre-carte{
+  background:#fff;
+  border-radius:12px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  text-align:left;
+}
+
+/* image qui colle aux bords */
+.livre-carte img{
+  width:100%;
+  height:240px;
+  object-fit:cover;
+}
+
+/* bloc texte */
+.livre-carte h3{
+  margin:14px 16px 6px;
+  font-size:26px;      /* gros titre comme sur ta capture maquette */
+  font-weight:500;
+  line-height:1.1;
+}
+.livre-carte p{
+  margin:0 16px 6px;
+  font-size:18px;
+  color:#9a9a9a;
+}
+.livre-carte .livre-pseudo{
+  margin:14px 16px 0;
+  font-size:14px;
+  font-style:italic;
+  color:#b0b0b0;
+}
+
+/* lien “Voir le livre” en bas */
+.livre-carte a{
+  margin-top:auto;
+  padding:12px 16px 18px;
+  font-size:14px;
+  color:#9a9a9a;
+}
+.livre-carte a:hover{color:#111}
+
+/* =========================
+   ACCUEIL : DERNIERS LIVRES
+========================= */
+.accueil-derniers-livres{
+  text-align:center;
+  margin-bottom:90px;
+}
+.accueil-derniers-livres .bouton{margin-top:32px}
+
+/* =========================
+   ACCUEIL : COMMENT ÇA MARCHE
+========================= */
+.accueil-fonctionnement{
+  text-align:center;
+  margin-bottom:100px;
+}
+.accueil-fonctionnement-texte{
+  max-width:520px;
+  margin:0 auto 32px;
+  font-size:14px;
+  opacity:.8;
+}
+.fonctionnement-grille{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:24px;
+  margin-bottom:40px;
+}
+.fonctionnement-carte{
+  background:#fff;
+  border-radius:12px;
+  padding:24px;
+}
+.fonctionnement-carte p{
+  margin:0;
+  font-size:13px;
+  opacity:.75;
+}
+
+/* =========================
+   ACCUEIL : VALEURS
+========================= */
+.accueil-valeurs{
+  margin-top: 80px;
+}
+
+/*.accueil-valeurs{margin-bottom:80px}*/
+.accueil-valeurs .valeurs-image{
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+.accueil-valeurs .valeurs-image img{
+  width: 100%;
+  height: 230px; /* conforme à la maquette */
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+}
+
+.accueil-valeurs h2{
+  /*font-family: Georgia, "Times New Roman", serif;*/
+  margin: 0 0 24px;
+  text-align: left;
+  font-family: Playfair Display;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0%;
+ 
+
+}
+
+
+
+.accueil-valeurs .valeurs-contenu{
+  position: relative;
+  max-width: 720px;
   margin: 0 auto;
-  padding: 40px 16px;
+  padding-top: 40px;      /* ✅ espace entre l'image et le titre */
+  padding-right: 160px;   /* ✅ réserve la place pour le coeur à droite */
+}
+.accueil-valeurs .valeurs-contenu p{
+  font-size: 14px;
+  line-height: 1.6;
+  color: #444;
+  margin: 0 0 16px;
 }
 
-.livre-layout{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: start;
+.valeurs-signature{
+  font-size: 12px;
+  font-style: italic;
+  color: #A6A6A6;
+  margin-top: 10px;
+
 }
 
-.livre-image-img{
+.valeurs-coeur{
+  position: absolute;
+  right: 80px;           /* ✅ comme la maquette (un peu dehors) */
+  bottom: -100px;           /* ✅ remonte légèrement */
+  width: 140px;           /* ✅ ajuste la taille */
+}
+
+.valeurs-coeur svg{
+  display: block;
   width: 100%;
   height: auto;
-  display: block;
-  border-radius: 18px;
 }
 
-.livre-titre{
-  margin: 0 0 8px;
+/*.valeurs-coeur{
+  
+  right: -40;
+  bottom: -10px;        /* ✅ descend un peu */
+ /* width: 120; /* taille du coeur */
+ /* height: 102;
+  opacity: 1;
+  top: 2795px;
+  left: 884px;
+  border-width: 2px;
+
+  
+
+}
+/*
+
+
+
+
+/* =========================
+   PAGE LIVRES : entête + recherche
+========================= */
+.livres-entete{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  margin-bottom:26px;
+}
+.livres-entete h1{margin:0;font-size:40px;line-height:1.1}
+
+.recherche-form{width:322px;flex:0 0 322px}
+.recherche-input{
+  width:100%;
+  height:50px;
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,.12);
+  background:#fff;
+  padding:0 14px 0 42px;
+  font-size:14px;
+  outline:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:14px 50%;
+}
+.recherche-input:focus{
+  border-color:rgba(23,143,85,.6);
+  box-shadow:0 0 0 3px rgba(23,143,85,.12);
 }
 
-.livre-auteur{
-  margin: 0 0 18px;
-  opacity: 0.8;
-}
+.lien-voir-tous{display:inline-block;margin-top:10px;opacity:.75}
+.lien-voir-tous:hover{opacity:1;text-decoration:underline}
 
-.livre-separateur{
-  border: 0;
-  border-top: 1px solid rgba(0,0,0,0.12);
-  margin: 18px 0 24px;
+/* =========================
+   PAGE LIVRE (single)
+========================= */
+.page-livre{padding:40px 16px}
+.livre-layout{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:48px;
+  align-items:start;
 }
+.livre-image-img{width:100%;border-radius:18px}
+.livre-image-absente{margin:0;padding:20px;background:#fff;border-radius:12px}
 
+.livre-titre{margin:0 0 8px}
+.livre-auteur{margin:0 0 18px;opacity:.8}
+.livre-separateur{border:0;border-top:1px solid rgba(0,0,0,.12);margin:18px 0 24px}
 .livre-sous-titre{
-  margin: 0 0 12px;
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  opacity: 0.7;
+  margin:0 0 12px;
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  opacity:.7;
 }
-
-.livre-description{
-  line-height: 1.7;
-  margin: 0;
-}
-
-.livre-proprietaire{
-  margin-top: 24px;
-}
-
+.livre-description{margin:0;line-height:1.7}
+.livre-proprietaire{margin-top:24px}
 .livre-proprietaire-label{
-  margin: 0 0 10px;
+  margin:0 0 10px;
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  opacity:.7;
+}
+.livre-proprietaire-carte{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 14px;
+  border-radius:999px;
+  border:1px solid rgba(0,0,0,.12);
+}
+.livre-avatar{
+  width:28px;height:28px;border-radius:50%;
+  background:rgba(0,0,0,.12);
+}
+
+/* =========================
+   PAGE : CONNEXION
+========================= */
+
+.page-connexion{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 16px;
+  overflow-x: hidden; /* sécurité anti scroll horizontal */
+}
+
+/* conteneur full largeur maîtrisé */
+.connexion-layout-full{
+  width: 100%;
+}
+
+/* grille principale */
+.connexion-layout{
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* colonne formulaire */
+.connexion-colonne{
+  width: 100%;
+}
+
+/* titre */
+.connexion-titre{
+  margin: 0 0 24px;
+  font-size: 38px;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+/* formulaire */
+.connexion-form{
+  display: grid;
+  gap: 14px;
+}
+
+.champ-label{
   font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   opacity: 0.7;
 }
 
-.livre-proprietaire-carte{
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 14px;
-  border-radius: 999px;
+.champ-input{
+  width: 100%;
+  height: 44px;
+  padding: 0 12px;
+  border-radius: 10px;
   border: 1px solid rgba(0,0,0,0.12);
+  background: #fff;
+  outline: none;
 }
 
-.livre-avatar{
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: rgba(0,0,0,0.12);
+.champ-input:focus{
+  border-color: rgba(23,143,85,0.6);
+  box-shadow: 0 0 0 3px rgba(23,143,85,0.12);
 }
 
-.bouton{
-  display: inline-block;
-  padding: 14px 18px;
-  border-radius: 12px;
-  text-decoration: none;
+/* bouton */
+.bouton-plein{
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* texte inscription */
+.connexion-texte{
+  margin-top: 14px;
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+.connexion-lien{
   font-weight: 600;
 }
 
-.bouton-principal{
-  margin-top: 18px;
-  width: 100%;
-  text-align: center;
+.connexion-lien:hover{
+  text-decoration: underline;
 }
-@media (max-width: 900px){
-  .livre-layout{
+
+/* colonne image */
+.connexion-image{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  
+  padding-left: 80px; /* ajuste si besoin */
+} 
+
+/* image */
+.connexion-image img{
+  width: 886px;
+  height: 730px;
+    margin-top: -60px;     /* ← monte l’image */
+     margin-left: 40px;
+     left: 40px;
+}
+
+/* responsive */
+ @media (max-width: 900px){
+  .connexion-layout{
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 32px;
   }
 
-  .page-livre{
-    padding: 24px 16px;
+  .connexion-image{
+    padding-left: 0;
   }
+
+  .connexion-image img{
+    width: 100%;
+    height: auto;
+    max-width: 720px;
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width:900px){
+  .accueil-hero{grid-template-columns:1fr;text-align:center}
+  .livres-entete{flex-direction:column;align-items:stretch}
+  .recherche-form{width:100%;flex:1 1 auto}
+  .livres-grille{grid-template-columns:1fr 1fr;gap:24px}
+  .fonctionnement-grille{grid-template-columns:1fr 1fr}
+  .livre-layout{grid-template-columns:1fr;gap:24px}
+  .page-accueil,.page-livres,.page-livre{padding:24px 16px}
+}
+@media (max-width:520px){
+  .livres-grille,.fonctionnement-grille{grid-template-columns:1fr}
+  .livres-entete h1{font-size:28px}
+  h1{font-size:30px}
 }

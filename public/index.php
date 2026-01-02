@@ -1,28 +1,41 @@
-
 <?php
-require_once '../Controllers/AccueilController.php';
-require_once '../Controllers/LivreController.php';
+require_once __DIR__ . '/../Controllers/AccueilController.php';
+require_once __DIR__ . '/../Controllers/LivreController.php';
+require_once __DIR__ . '/../Controllers/LivresController.php';
+require_once __DIR__ . '/../Controllers/ConnexionController.php';
+require_once __DIR__ . '/../Controllers/InscriptionController.php';
 
 
-
-// 1. Récupérer la page demandée
 $page = $_GET['page'] ?? 'accueil';
 
-// 2. Router vers la bonne page
 switch ($page) {
-    case 'accueil':
-        $controller = new AcceuilController ();
-        $controller-> afficher();
+  case 'accueil':
+    $controller = new AccueilController();
+    $controller->afficher();
+    break;
 
-        break;
-         case 'livre':
-        $controller = new LivreController ();
-        $controller-> afficherLivre();
+  case 'livre':
+    $controller = new LivreController();
+    $controller->afficherLivre();
+    break;
 
-        break;
+  case 'livres':
+    $controller = new LivresController();
+    $controller->afficherLivres();
+    break;
+
+  case 'connexion':
+    $controller = new ConnexionController();
+    $controller->afficher();
+    break;
+    
+  case 'inscription':
+    $controller = new InscriptionController();
+    $controller->afficher();
+    break;
 
     
 
-    default:
-        echo "Page non trouvée";
+  default:
+    echo "Page non trouvée";
 }

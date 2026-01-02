@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../models/BookManager.php';
 
-class AcceuilController {
+class AccueilController {
 
     public function afficher()
    {
