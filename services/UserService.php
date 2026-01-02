@@ -55,4 +55,42 @@ class UserService
 
         return $erreurs;
     }
+
+    public function connecterUtilisateur($email, $motdepasse)
+{
+    $erreurs = array();
+
+    // Nettoyage de l’email
+    $email = trim($email);
+
+    // Vérifier que l’email est rempli
+    if ($email == '') {
+        $erreurs[] = "Adresse email manquante.";
+        return $erreurs;
+    }
+
+    // Vérifier que l’email est valide
+    if (filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
+        $erreurs[] = "Adresse email invalide.";
+        return $erreurs;
+    }
+
+    // Récupérer l’utilisateur en base de données
+    $utilisateur = $this->userManager->trouverParEmail($email);
+
+    if ($utilisateur == null) {
+        $erreurs[] = "Aucun compte trouvé avec cet email.";
+        return $erreurs;
+    }
+
+    // Vérifier le mot de passe
+    if (password_verify($motdepasse, $utilisateur['password']) == false) {
+        $erreurs[] = "Mot de passe incorrect.";
+        return $erreurs;
+    }
+
+    // Si tout est bon, on retourne un tableau vide
+    return $erreurs;
+}
+
 }

@@ -5,8 +5,16 @@
 
     <div class="connexion-colonne">
       <h1 class="connexion-titre">Connexion</h1>
+      <?php if (!empty($erreurs)): ?>
+  <div class="message-erreur">
+    <?php foreach ($erreurs as $erreur): ?>
+      <p><?= htmlspecialchars($erreur) ?></p>
+    <?php endforeach; ?>
+  </div>
+<?php endif; ?>
 
-      <form class="connexion-form" method="post" action="#">
+     <form class="connexion-form" method="post" action="/projet4/public/?page=connexion">
+
         <label class="champ-label" for="email">Adresse email</label>
         <input class="champ-input" type="email" id="email" name="email" required>
 
