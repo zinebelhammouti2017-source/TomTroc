@@ -7,9 +7,11 @@ body{
   font-family: Arial, sans-serif;
   background:#f6f3ee;
   color:#111;
+  overflow-x: hidden;
 }
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
+
 
 /* =========================
    LAYOUT GLOBAL
@@ -152,6 +154,7 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
 ========================= */
 .accueil-valeurs{
   margin-top: 80px;
+  
 }
 
 /*.accueil-valeurs{margin-bottom:80px}*/
@@ -159,6 +162,7 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
+
 }
 
 .accueil-valeurs .valeurs-image img{
@@ -189,8 +193,8 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   position: relative;
   max-width: 720px;
   margin: 0 auto;
-  padding-top: 40px;      /* ✅ espace entre l'image et le titre */
-  padding-right: 160px;   /* ✅ réserve la place pour le coeur à droite */
+  padding-top: 40px;      /* espace entre l'image et le titre */
+  padding-right: 160px;   /*  réserve la place pour le coeur à droite */
 }
 .accueil-valeurs .valeurs-contenu p{
   font-size: 14px;
@@ -209,9 +213,9 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
 
 .valeurs-coeur{
   position: absolute;
-  right: 80px;           /* ✅ comme la maquette (un peu dehors) */
-  bottom: -100px;           /* ✅ remonte légèrement */
-  width: 140px;           /* ✅ ajuste la taille */
+  right: 80px;           /*  comme la maquette (un peu dehors) */
+  bottom: -100px;           /* remonte légèrement */
+  width: 140px;           /*  ajuste la taille */
 }
 
 .valeurs-coeur svg{
@@ -450,6 +454,116 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
     max-width: 720px;
   }
 }
+
+/* =========================
+   HEADER
+========================= */
+.site-header{
+  background:#f6f3ee;
+  padding:18px 0;
+}
+
+.site-header-contenu{
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+
+.site-logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:600;
+}
+
+.site-logo-badge{
+  width:34px;
+  height:34px;
+  border-radius:8px;
+  background:#178f55;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+}
+
+.site-logo-texte{
+  font-size:14px;
+  color:#178f55;
+}
+
+.site-nav,
+.site-nav-droite{
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+
+.site-nav-lien{
+  font-size:13px;
+  opacity:0.85;
+}
+
+.site-nav-lien:hover{
+  opacity:1;
+  text-decoration:underline;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.site-footer{
+  background:#fff;
+  margin-top:80px;
+  padding:24px 0;
+}
+
+.site-footer-contenu{
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 16px;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:28px;
+}
+
+.site-footer-lien,
+.site-footer-texte{
+  font-size:12px;
+  opacity:0.7;
+}
+
+.site-footer-lien:hover{
+  opacity:1;
+  text-decoration:underline;
+}
+
+.site-footer-logo{
+  margin-left:10px;
+}
+
+/* =========================
+   RESPONSIVE HEADER/FOOTER
+========================= */
+@media (max-width:900px){
+  .site-header-contenu{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .site-footer-contenu{
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+}
+
+
 
 /* =========================
    RESPONSIVE
