@@ -7,15 +7,47 @@
       <div class="connexion-colonne">
         <h1 class="connexion-titre">Inscription</h1>
 
-        <form class="connexion-form" method="post" action="#">
+        <?php if (!empty($erreurs)): ?>
+          <div class="message-erreur">
+            <?php foreach ($erreurs as $erreur): ?>
+              <p><?= htmlspecialchars($erreur) ?></p>
+            <?php endforeach; ?>
+          </div>
+        <?php endif; ?>
+
+        <form class="connexion-form" method="post" action="/projet4/public/?page=inscription">
+
           <label class="champ-label" for="pseudo">Pseudo</label>
-          <input class="champ-input" type="text" id="pseudo" name="pseudo" required>
+          <input
+            class="champ-input"
+            type="text"
+            id="pseudo"
+            name="pseudo"
+            required
+            value="<?= htmlspecialchars($_POST['pseudo'] ?? '') ?>"
+            autocomplete="nickname"
+          >
 
           <label class="champ-label" for="email">Adresse email</label>
-          <input class="champ-input" type="email" id="email" name="email" required>
+          <input
+            class="champ-input"
+            type="email"
+            id="email"
+            name="email"
+            required
+            value="<?= htmlspecialchars($_POST['email'] ?? '') ?>"
+            autocomplete="email"
+          >
 
           <label class="champ-label" for="motdepasse">Mot de passe</label>
-          <input class="champ-input" type="password" id="motdepasse" name="motdepasse" required>
+          <input
+            class="champ-input"
+            type="password"
+            id="motdepasse"
+            name="motdepasse"
+            required
+            autocomplete="new-password"
+          >
 
           <button class="bouton bouton-principal bouton-plein" type="submit">
             S’inscrire

@@ -319,7 +319,7 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
 }
 
 /* =========================
-   PAGE : CONNEXION
+   PAGE : CONNEXION/INSCRIPTION
 ========================= */
 
 .page-connexion{
@@ -421,6 +421,17 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
      margin-left: 40px;
      left: 40px;
 }
+
+.message-erreur{
+  background:#fff;
+  border:1px solid rgba(0,0,0,.12);
+  border-radius:12px;
+  padding:12px 14px;
+  margin:0 0 16px;
+}
+.message-erreur p{margin:0 0 6px}
+.message-erreur p:last-child{margin-bottom:0}
+
 
 /* responsive */
  @media (max-width: 900px){
