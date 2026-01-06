@@ -4,8 +4,8 @@
     <a class="site-footer-lien" href="#">Mentions légales</a>
     <span class="site-footer-texte">Tom Troc©</span>
 
-    <div class="site-footer-logo">
-      <span class="site-logo-badge">Tt</span>
+    <div>
+      <span class="site-footer-logo"><img src="/projet4/public/images/imgfooterp.png" alt="logo du site"></span>
     </div>
   </div>
 </footer>

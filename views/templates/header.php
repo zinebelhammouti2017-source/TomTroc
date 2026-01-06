@@ -11,7 +11,7 @@
   <div class="site-header-contenu">
 
     <a class="site-logo" href="/projet4/public/?page=accueil" aria-label="Retour à l'accueil">
-      <span class="site-logo-badge">Tt</span>
+      <span class="site-logo-badge"><img src="/projet4/public/images/logoheader.png" alt="Logo site"  class="logo-image"></span>
       <span class="site-logo-texte">Tom Troc</span>
     </a>
 
