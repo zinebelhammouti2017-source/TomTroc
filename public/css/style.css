@@ -456,6 +456,191 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
 }
 
 /* =========================
+   PAGE : MON COMPTE (maquette)
+========================= */
+
+.page-mon-compte{
+  max-width:1100px;
+  margin:0 auto;
+  padding:60px 16px;
+}
+
+.mon-compte-titre{
+  margin:0 0 24px;
+  font-size:30px;
+  line-height:1.1;
+  font-weight:700;
+}
+
+/* 2 cartes en ligne */
+.mon-compte-blocs{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:24px;
+  align-items:start;
+}
+
+/* Cartes */
+.mon-compte-profil,
+.mon-compte-infos{
+  background:#fff;
+  border-radius:16px;
+  padding:32px;
+      height: 400px;
+}
+
+/* =========================
+   CARTE PROFIL (gauche)
+========================= */
+.mon-compte-profil{
+  text-align:center;
+}
+
+/* Photo ronde */
+.mon-compte-avatar{
+  width:140px;
+  height:140px;
+  border-radius:50%;
+  object-fit:cover;
+  display:block;
+  margin:6px auto 8px;
+}
+
+/* lien "modifier" */
+.mon-compte-modifier{
+  display:inline-block;
+  font-size:14px;
+  color:#b7b7b7;
+  text-decoration:underline;
+  text-underline-offset:6px;
+}
+
+.mon-compte-modifier:hover{
+  color:#8f8f8f;
+}
+
+/* ligne de séparation */
+.mon-compte-separateur{
+  border:0;
+  border-top:1px solid rgba(0,0,0,0.08);
+  margin:24px 0;
+}
+
+/* pseudo (gros, style maquette) */
+.mon-compte-pseudo{
+  margin:0 0 10px;
+  font-size:24px;
+  line-height:1.1;
+  font-weight:500;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  color:#111;
+}
+
+/* "Membre depuis ..." */
+.mon-compte-info{
+  margin:0;
+  font-size:14px;
+  color:#b0b0b0;
+}
+
+/* bloc bibliothèque */
+.mon-compte-biblio{
+  margin-top:22px;
+}
+
+.mon-compte-biblio-titre{
+  margin:0 0 10px;
+  font-size:12px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#111;
+  font-weight:700;
+}
+
+/* ligne icône + nombre */
+.mon-compte-biblio-ligne{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  color:#111;
+}
+
+.mon-compte-biblio-icone{
+  font-size:16px; /* si c'est un emoji/icone */
+  line-height:1;
+}
+
+.mon-compte-biblio-nombre{
+  font-size:18px;
+  font-weight:500;
+}
+
+/* =========================
+   CARTE INFOS (droite)
+   (On garde tes champs existants)
+========================= */
+.mon-compte-sous-titre{
+  margin:0 0 18px;
+  font-size:18px;
+  font-weight:600;
+  color:#111;
+}
+
+/* Labels espacés */
+.mon-compte-infos .champ-label{
+  display:block;
+  margin:16px 0 6px;
+  font-size:12px;
+  opacity:.7;
+}
+
+/* Inputs style "gris clair" maquette */
+.mon-compte-infos .champ-input{
+  background:#eef3f7;
+  border:0;
+  border-radius:10px;
+  height:44px;
+  padding:0 14px;
+}
+
+/* focus propre */
+.mon-compte-infos .champ-input:focus{
+  outline:none;
+  box-shadow:0 0 0 3px rgba(23,143,85,0.12);
+}
+
+/* bouton Enregistrer (cadre vert + fond transparent comme maquette) */
+.mon-compte-infos .bouton-plein{
+  width:220px;
+  margin-top:22px;
+  padding:12px 18px;
+  border-radius:12px;
+  background:transparent;
+  border:1px solid #178f55;
+  color:#178f55;
+  font-weight:700;
+}
+
+.mon-compte-infos .bouton-plein:hover{
+  background:rgba(23,143,85,0.08);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width:900px){
+  .mon-compte-blocs{
+    grid-template-columns:1fr;
+  }
+
+  .mon-compte-infos .bouton-plein{
+    width:100%;
+  }
+}
+
+
+/* =========================
    HEADER
 ========================= */
 .site-header{

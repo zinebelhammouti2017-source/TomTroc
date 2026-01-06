@@ -128,4 +128,36 @@ public function findByRecherche(string $recherche): array
     return $livres ?: [];
 }
 
+public function findByUserId(int $idUtilisateur): array
+{
+    $pdo = getPDO();
+
+    $sql = "
+        SELECT
+            b.id,
+            b.title,
+            b.author,
+            b.image,
+            b.status,
+            b.created_at
+        FROM book b
+        WHERE b.user_id = :idUtilisateur
+        ORDER BY b.created_at DESC
+    ";
+
+    $requete = $pdo->prepare($sql); // ($stmt)
+    $requete->execute([
+        'idUtilisateur' => $idUtilisateur
+    ]);
+
+    $livres = $requete->fetchAll(PDO::FETCH_ASSOC);
+
+    if ($livres) {
+        return $livres;
+    }
+
+    return [];
+}
+
+
 }

@@ -4,6 +4,8 @@ require_once __DIR__ . '/../Controllers/LivreController.php';
 require_once __DIR__ . '/../Controllers/LivresController.php';
 require_once __DIR__ . '/../Controllers/ConnexionController.php';
 require_once __DIR__ . '/../Controllers/InscriptionController.php';
+require_once __DIR__ . '/../Controllers/MonCompteController.php';
+
 
 
 $page = $_GET['page'] ?? 'accueil';
@@ -33,6 +35,12 @@ switch ($page) {
     $controller = new InscriptionController();
     $controller->afficher();
     break;
+
+  case 'mon-compte':
+  $controller = new MonCompteController();
+  $controller->afficher();
+  break;
+
 
     
 
