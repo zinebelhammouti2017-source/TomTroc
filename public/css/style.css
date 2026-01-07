@@ -23,7 +23,7 @@ a{color:inherit;text-decoration:none}
 }
 
 /* =========================
-   TITRES (ton projet)
+   TITRES
 ========================= */
 h1{margin:0 0 12px;font-size:38px;line-height:1.1}
 h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
@@ -157,7 +157,7 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   
 }
 
-/*.accueil-valeurs{margin-bottom:80px}*/
+
 .accueil-valeurs .valeurs-image{
   width: 100vw;
   margin-left: calc(50% - 50vw);
@@ -167,14 +167,14 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
 
 .accueil-valeurs .valeurs-image img{
   width: 100%;
-  height: 230px; /* conforme à la maquette */
+  height: 230px; 
   object-fit: cover;
   display: block;
   border-radius: 0;
 }
 
 .accueil-valeurs h2{
-  /*font-family: Georgia, "Times New Roman", serif;*/
+  
   margin: 0 0 24px;
   text-align: left;
   font-family: Playfair Display;
@@ -194,7 +194,7 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   max-width: 720px;
   margin: 0 auto;
   padding-top: 40px;      /* espace entre l'image et le titre */
-  padding-right: 160px;   /*  réserve la place pour le coeur à droite */
+  padding-right: 160px;   
 }
 .accueil-valeurs .valeurs-contenu p{
   font-size: 14px;
@@ -223,24 +223,6 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   width: 100%;
   height: auto;
 }
-
-/*.valeurs-coeur{
-  
-  right: -40;
-  bottom: -10px;        /* ✅ descend un peu */
- /* width: 120; /* taille du coeur */
- /* height: 102;
-  opacity: 1;
-  top: 2795px;
-  left: 884px;
-  border-width: 2px;
-
-  
-
-}
-/*
-
-
 
 
 /* =========================
@@ -526,7 +508,7 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   margin:24px 0;
 }
 
-/* pseudo (gros, style maquette) */
+/* pseudo  */
 .mon-compte-pseudo{
   margin:0 0 10px;
   font-size:24px;
@@ -578,7 +560,6 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
 
 /* =========================
    CARTE INFOS (droite)
-   (On garde tes champs existants)
 ========================= */
 .mon-compte-sous-titre{
   margin:0 0 18px;
@@ -595,7 +576,7 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   opacity:.7;
 }
 
-/* Inputs style "gris clair" maquette */
+/* Inputs style "gris clair" */
 .mon-compte-infos .champ-input{
   background:#eef3f7;
   border:0;
@@ -610,7 +591,7 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   box-shadow:0 0 0 3px rgba(23,143,85,0.12);
 }
 
-/* bouton Enregistrer (cadre vert + fond transparent comme maquette) */
+/* bouton Enregistrer (cadre vert + fond transparent ) */
 .mon-compte-infos .bouton-plein{
   width:220px;
   margin-top:22px;
@@ -644,10 +625,7 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
 ========================= */
 
 .mon-compte-tableau{
- /* margin-top: 26px;
-  background: #fff;
-  border-radius: 18px;
-  overflow: hidden; /* pour arrondis propres */
+
    background:#fff;
   border-radius:16px;
   padding:32px;
@@ -677,7 +655,6 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   border-bottom: 1px solid rgba(0,0,0,.06);
 }
 
-/* alternance de couleur (comme maquette) */
 .mon-compte-ligne-alt{
   background: #eef3f6;
 }
@@ -816,7 +793,7 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   font-weight:700;
 
   position: relative;   /* IMPORTANT : base pour l’absolu */
-  overflow: hidden;     /* optionnel mais propre */
+  overflow: hidden;    
 }
 
 .logo-image{
@@ -958,7 +935,7 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
 }
 
 .mon-compte-ligne-alt{
-  background: #eef3f7; /* gris bleuté de la maquette */
+  background: #eef3f7; 
 }
 
 .col-photo{

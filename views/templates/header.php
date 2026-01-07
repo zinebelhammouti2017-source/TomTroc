@@ -8,6 +8,7 @@
 <body>
 
 <header class="site-header">
+
   <div class="site-header-contenu">
 
     <a class="site-logo" href="/projet4/public/?page=accueil" aria-label="Retour à l'accueil">

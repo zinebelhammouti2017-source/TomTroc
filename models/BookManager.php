@@ -21,7 +21,7 @@ class BookManager
             b.created_at,
             u.pseudo AS owner_pseudo
         FROM book b
-        JOIN users u ON u.id = b.user_id
+        JOIN user u ON u.id = b.user_id
         WHERE b.status = 1
         ORDER BY b.created_at DESC
         LIMIT :limite
@@ -53,7 +53,7 @@ class BookManager
                 u.id AS owner_id,
                 u.pseudo AS owner_pseudo
             FROM book b
-            JOIN users u ON u.id = b.user_id
+            JOIN user u ON u.id = b.user_id
             WHERE b.id = :id
             LIMIT 1
         ";
@@ -80,7 +80,7 @@ class BookManager
                 u.id AS owner_id,
                 u.pseudo AS owner_pseudo
             FROM book b
-            JOIN users u ON u.id = b.user_id 
+            JOIN user u ON u.id = b.user_id 
             WHERE b.status=1
             ORDER BY b.created_at DESC";
             $requete= $pdo->prepare($sql);
@@ -105,7 +105,7 @@ public function findByRecherche(string $recherche): array
             b.image,
             u.pseudo AS owner_pseudo
         FROM book b
-        JOIN users u ON u.id = b.user_id
+        JOIN user u ON u.id = b.user_id
         WHERE b.title LIKE :recherche
            OR b.author LIKE :recherche
         ORDER BY b.created_at DESC

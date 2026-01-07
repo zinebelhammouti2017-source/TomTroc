@@ -72,6 +72,7 @@
   </div>
 
   <!-- Ligne 1 -->
+
   <div class="mon-compte-ligne">
     <div class="col-photo">
       <img src="/projet4/public/images/livre1.jpg" alt="Couverture du livre" class="mon-compte-livre-img">

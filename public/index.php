@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require_once __DIR__ . '/../Controllers/AccueilController.php';
 require_once __DIR__ . '/../Controllers/LivreController.php';
 require_once __DIR__ . '/../Controllers/LivresController.php';

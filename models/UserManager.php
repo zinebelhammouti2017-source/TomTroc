@@ -8,7 +8,7 @@ class UserManager
     {
         $pdo = getPDO();
 
-        $sql = "SELECT id FROM users WHERE email = :email LIMIT 1";
+        $sql = "SELECT id FROM user WHERE email = :email LIMIT 1";
         $requete = $pdo->prepare($sql); // ($stmt)
         $requete->execute(['email' => $email]);
 
@@ -19,7 +19,7 @@ class UserManager
     {
         $pdo = getPDO();
 
-        $sql = "SELECT id FROM users WHERE pseudo = :pseudo LIMIT 1";
+        $sql = "SELECT id FROM user WHERE pseudo = :pseudo LIMIT 1";
         $requete = $pdo->prepare($sql); // ($stmt)
         $requete->execute(['pseudo' => $pseudo]);
 
@@ -31,7 +31,7 @@ class UserManager
         $pdo = getPDO();
 
         $sql = "
-            INSERT INTO users (pseudo, email, password, created_at)
+            INSERT INTO user (pseudo, email, password, created_at)
             VALUES (:pseudo, :email, :password, CURDATE())
         ";
 
@@ -48,7 +48,7 @@ class UserManager
     {
       $pdo = getPDO();
 
-      $sql = "SELECT * FROM users WHERE email = :email LIMIT 1";
+      $sql = "SELECT * FROM user WHERE email = :email LIMIT 1";
       $requete = $pdo->prepare($sql);
       $requete->execute(['email' => $email]);
 

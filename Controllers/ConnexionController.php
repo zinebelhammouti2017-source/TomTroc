@@ -8,10 +8,8 @@ class ConnexionController
     {
         $erreurs = array();
 
-        // Si le formulaire est envoyé (POST)
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-            // 1) Récupérer les champs du formulaire
             $email = '';
             if (isset($_POST['email'])) {
                 $email = $_POST['email'];
@@ -22,18 +20,26 @@ class ConnexionController
                 $motdepasse = $_POST['motdepasse'];
             }
 
-            // 2) Appeler le service
             $userService = new UserService();
-            $erreurs = $userService->connecterUtilisateur($email, $motdepasse);
+            $resultat = $userService->connecterUtilisateur($email, $motdepasse);
 
-            // 3) Si pas d’erreurs → ici, on redirige (la session viendra juste après)
-            if (empty($erreurs)) {
-                header('Location: /projet4/public/?page=accueil');
+            $erreurs = $resultat['erreurs'];
+
+            if (count($erreurs) === 0) {
+
+                $utilisateur = $resultat['utilisateur'];
+
+                // On met l'utilisateur dans la session
+                $_SESSION['user_id'] = $utilisateur['id'];
+                $_SESSION['pseudo'] = $utilisateur['pseudo'];
+                $_SESSION['email'] = $utilisateur['email'];
+
+                // Redirection
+                header('Location: /projet4/public/?page=mon-compte');
                 exit;
             }
         }
 
-        // 4) Afficher la vue (GET ou POST avec erreurs)
         require_once __DIR__ . '/../views/connexion.php';
     }
 }
