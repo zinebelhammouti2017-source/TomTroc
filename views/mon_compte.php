@@ -18,14 +18,14 @@
 
         <a href="#" class="mon-compte-modifier">modifier</a>
 
-        <!-- Ligne comme la maquette -->
+        <!-- Ligne-->
         <hr class="mon-compte-separateur">
 
         <p class="mon-compte-pseudo">nathalie</p>
 
         <p class="mon-compte-info">Membre depuis 1 an</p>
 
-        <!-- Bloc BIBLIOTHÈQUE comme la maquette -->
+        <!-- Bloc BIBLIOTHÈQUE-->
         <div class="mon-compte-biblio">
           <p class="mon-compte-biblio-titre">BIBLIOTHÈQUE</p>
 
@@ -58,6 +58,69 @@
       </div>
 
     </div>
+
+    <!-- TABLEAU : MES LIVRES -->
+<div class="mon-compte-tableau">
+
+  <div class="mon-compte-tableau-entete">
+    <div>Photo</div>
+    <div>Titre</div>
+    <div>Auteur</div>
+    <div>Description</div>
+    <div>Disponibilité</div>
+    <div>Action</div>
+  </div>
+
+  <!-- Ligne 1 -->
+  <div class="mon-compte-ligne">
+    <div class="col-photo">
+      <img src="/projet4/public/images/livre1.jpg" alt="Couverture du livre" class="mon-compte-livre-img">
+    </div>
+
+    <div class="col-texte">The Kinfolk Table</div>
+    <div class="col-texte">Nathan Williams</div>
+
+    <div class="col-description">
+      J’ai récemment plongé dans les pages de “The Kinfolk Table” et j’ai été enchanté p...
+    </div>
+
+    <div class="col-statut">
+      <span class="badge badge-disponible">disponible</span>
+    </div>
+
+    <div class="col-actions">
+      <a href="#" class="action-editer">Éditer</a>
+      <a href="#" class="action-supprimer">Supprimer</a>
+    </div>
+  </div>
+
+  <!-- Ligne 2 -->
+  <div class="mon-compte-ligne mon-compte-ligne-alt">
+    <div class="col-photo">
+      <img src="/projet4/public/images/livre2.jpg" alt="Couverture du livre" class="mon-compte-livre-img">
+    </div>
+
+    <div class="col-texte">The Kinfolk Table</div>
+    <div class="col-texte">Nathan Williams</div>
+
+    <div class="col-description">
+      J’ai récemment plongé dans les pages de “The Kinfolk Table” et j’ai été enchanté p...
+    </div>
+
+    <div class="col-statut">
+      <span class="badge badge-nondispo">non dispo.</span>
+    </div>
+
+    <div class="col-actions">
+      <a href="#" class="action-editer">Éditer</a>
+      <a href="#" class="action-supprimer">Supprimer</a>
+    </div>
+  </div>
+
+  <!-- Tu peux dupliquer encore 2 lignes si tu veux comme la maquette -->
+
+</div>
+
 
   </section>
 </main>

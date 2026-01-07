@@ -64,7 +64,7 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
 }
 
 /* =========================
-   CARTE LIVRE (style maquette : texte à gauche, gris, image “flush”)
+   CARTE LIVRE (style : texte à gauche, gris, image “flush”)
 ========================= */
 .livre-carte{
   background:#fff;
@@ -85,7 +85,7 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
 /* bloc texte */
 .livre-carte h3{
   margin:14px 16px 6px;
-  font-size:26px;      /* gros titre comme sur ta capture maquette */
+  font-size:26px;      
   font-weight:500;
   line-height:1.1;
 }
@@ -213,9 +213,9 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
 
 .valeurs-coeur{
   position: absolute;
-  right: 80px;           /*  comme la maquette (un peu dehors) */
+  right: 80px;           
   bottom: -100px;           /* remonte légèrement */
-  width: 140px;           /*  ajuste la taille */
+  width: 140px;         
 }
 
 .valeurs-coeur svg{
@@ -414,7 +414,7 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   display: flex;
   justify-content: flex-start;
   
-  padding-left: 80px; /* ajuste si besoin */
+  padding-left: 80px; 
 } 
 
 /* image */
@@ -456,7 +456,7 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
 }
 
 /* =========================
-   PAGE : MON COMPTE (maquette)
+   PAGE : MON COMPTE 
 ========================= */
 
 .page-mon-compte{
@@ -639,6 +639,144 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   }
 }
 
+/* =========================
+   PAGE : MON COMPTE (TABLEAU)
+========================= */
+
+.mon-compte-tableau{
+ /* margin-top: 26px;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden; /* pour arrondis propres */
+   background:#fff;
+  border-radius:16px;
+  padding:32px;
+      height: 400px;
+}
+
+/* Entête du tableau */
+.mon-compte-tableau-entete{
+  display: grid;
+  grid-template-columns: 90px 190px 160px 1fr 150px 140px;
+  gap: 0;
+  padding: 18px 24px;
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,.55);
+  border-bottom: 1px solid rgba(0,0,0,.08);
+}
+
+/* Une ligne du tableau */
+.mon-compte-ligne{
+  display: grid;
+  grid-template-columns: 90px 190px 160px 1fr 150px 140px;
+  align-items: center;
+  padding: 18px 24px;
+  gap: 0;
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+
+/* alternance de couleur (comme maquette) */
+.mon-compte-ligne-alt{
+  background: #eef3f6;
+}
+
+.mon-compte-tableau .mon-compte-ligne:last-child{
+  border-bottom: none;
+}
+
+/* Colonne photo */
+.mon-compte-livre-img{
+  width: 24px;
+  height: 24px;
+  border-radius: 10px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Texte */
+.col-texte{
+  font-size: 13px;
+  color: rgba(0,0,0,.75);
+}
+
+.col-description{
+  font-size: 12px;
+  color: rgba(0,0,0,.55);
+  line-height: 1.4;
+  max-width: 420px;
+}
+
+/* Badges disponibilité */
+.badge{
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.badge-disponible{
+  background: rgba(23,143,85,.20);
+  color: #178f55;
+}
+
+.badge-nondispo{
+  background: rgba(219, 84, 84, .20);
+  color: #b93a3a;
+}
+
+/* Actions */
+.col-actions{
+  display: flex;
+  gap: 18px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.action-editer{
+  font-size: 12px;
+  color: rgba(0,0,0,.65);
+  text-decoration: underline;
+}
+
+.action-supprimer{
+  font-size: 12px;
+  color: #d14b4b;
+  text-decoration: underline;
+}
+
+/* =========================
+   RESPONSIVE tableau
+========================= */
+@media (max-width: 900px){
+  .mon-compte-tableau-entete{
+    display: none; /* comme souvent sur mobile */
+  }
+
+  .mon-compte-ligne,
+  .mon-compte-ligne-alt{
+    grid-template-columns: 70px 1fr;
+    gap: 10px 16px;
+  }
+
+  /* On “regroupe” visuellement */
+  .col-texte:nth-of-type(1){
+    font-weight: 600;
+  }
+
+  .col-description,
+  .col-statut,
+  .col-actions{
+    grid-column: 1 / -1;
+  }
+
+  .col-actions{
+    margin-top: 6px;
+  }
+}
+
 
 /* =========================
    HEADER
@@ -714,6 +852,8 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   text-decoration:underline;
 }
 
+
+
 /* =========================
    FOOTER
 ========================= */
@@ -782,4 +922,133 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   .livres-grille,.fonctionnement-grille{grid-template-columns:1fr}
   .livres-entete h1{font-size:28px}
   h1{font-size:30px}
+}
+
+/* =========================
+   MON COMPTE : TABLEAU LIVRES
+========================= */
+
+.mon-compte-tableau{
+  margin-top: 50px;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* entête */
+.mon-compte-tableau-entete{
+  display: grid;
+  grid-template-columns: 90px 180px 160px 1fr 140px 140px;
+  gap: 0;
+  padding: 18px 20px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+/* lignes */
+.mon-compte-ligne{
+  display: grid;
+  grid-template-columns: 90px 180px 160px 1fr 140px 140px;
+  align-items: center;
+  padding: 18px 20px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.mon-compte-ligne-alt{
+  background: #eef3f7; /* gris bleuté de la maquette */
+}
+
+.col-photo{
+  display: flex;
+  align-items: center;
+}
+
+.mon-compte-livre-img{
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  object-fit: cover;
+  display: block;
+}
+
+/* texte */
+.col-texte{
+  font-size: 13px;
+  color: #111;
+}
+
+.col-description{
+  font-size: 12px;
+  color: #666;
+  line-height: 1.4;
+
+  /* coupe le texte comme "..." */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* badges */
+.badge{
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  line-height: 1;
+}
+
+.badge-disponible{
+  background: rgba(23,143,85,0.18);
+  color: #178f55;
+}
+
+.badge-nondispo{
+  background: rgba(214,79,79,0.18);
+  color: #d64f4f;
+}
+
+/* actions */
+.col-actions{
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+}
+
+.action-editer{
+  color: #777;
+  text-decoration: underline;
+}
+
+.action-supprimer{
+  color: #d64f4f;
+  text-decoration: underline;
+}
+
+/* responsive */
+@media (max-width: 900px){
+  .mon-compte-tableau-entete{
+    display:none; /* sur mobile on cache l'entête */
+  }
+
+  .mon-compte-ligne{
+    grid-template-columns: 70px 1fr;
+    grid-template-areas:
+      "photo titre"
+      "photo auteur"
+      "photo desc"
+      "photo dispo"
+      "photo actions";
+    gap: 6px 14px;
+  }
+
+  .col-photo{grid-area: photo}
+  .col-texte:nth-of-type(1){grid-area: titre}
+  .col-texte:nth-of-type(2){grid-area: auteur}
+  .col-description{grid-area: desc}
+  .col-statut{grid-area: dispo}
+  .col-actions{grid-area: actions}
 }
