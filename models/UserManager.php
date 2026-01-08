@@ -61,4 +61,22 @@ class UserManager
       }
     }
 
+    public function trouverParId(int $id): ?array
+{
+    $pdo = getPDO();
+
+    $sql = "SELECT * FROM user WHERE id = :id LIMIT 1";
+    $requete = $pdo->prepare($sql);
+    $requete->execute(['id' => $id]);
+
+    $utilisateur = $requete->fetch();
+
+    if ($utilisateur !== false) {
+        return $utilisateur;
+    }
+
+    return null;
+}
+
+
 }

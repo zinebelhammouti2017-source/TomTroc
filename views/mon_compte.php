@@ -21,7 +21,14 @@
         <!-- Ligne-->
         <hr class="mon-compte-separateur">
 
-        <p class="mon-compte-pseudo">nathalie</p>
+        <p class="mon-compte-pseudo">
+          <?php
+          if (isset($_SESSION['pseudo'])) {
+              echo htmlspecialchars($_SESSION['pseudo']);
+             }
+          ?>
+       </p>
+
 
         <p class="mon-compte-info">Membre depuis 1 an</p>
 
@@ -31,7 +38,16 @@
 
           <div class="mon-compte-biblio-ligne">
             <span class="mon-compte-biblio-icone">📚</span>
-            <span class="mon-compte-biblio-nombre">4 livres</span>
+           <span class="mon-compte-biblio-nombre">
+             <?php
+              $nombreLivres = 0;
+              if (isset($livresUtilisateur) && is_array($livresUtilisateur)) {
+              $nombreLivres = count($livresUtilisateur);
+            }
+
+              echo $nombreLivres . " livres";
+              ?>
+           </span>
           </div>
         </div>
 
@@ -43,13 +59,28 @@
         <h2 class="mon-compte-sous-titre">Vos informations personnelles</h2>
 
         <label class="champ-label" for="email">Adresse email</label>
-        <input class="champ-input" id="email" type="email" value="nathalie@email.com" disabled>
+         
+        <?php
+         $valEmail = '';
+         if (isset($_SESSION['email'])) {
+         $valEmail = htmlspecialchars($_SESSION['email']);
+         }
+        ?>
+        <input class="champ-input" id="email" type="email" value="<?php echo $valEmail; ?>" disabled>  
+
 
         <label class="champ-label" for="motdepasse">Mot de passe</label>
         <input class="champ-input" id="motdepasse" type="password" value="********" disabled>
 
         <label class="champ-label" for="pseudo">Pseudo</label>
-        <input class="champ-input" id="pseudo" type="text" value="nathalie">
+        <?php
+         $valPseudo = '';
+         if (isset($_SESSION['pseudo'])) {
+         $valPseudo = htmlspecialchars($_SESSION['pseudo']);
+         }
+        ?>
+        <input class="champ-input" id="pseudo" type="text" value="<?php echo $valPseudo; ?>">
+
 
         <button class="bouton bouton-principal bouton-plein" type="button">
           Enregistrer
@@ -70,55 +101,66 @@
     <div>Disponibilité</div>
     <div>Action</div>
   </div>
+<?php
+$indexLigne = 0;
 
-  <!-- Ligne 1 -->
+if (isset($livresUtilisateur) && is_array($livresUtilisateur) && count($livresUtilisateur) > 0) {
 
-  <div class="mon-compte-ligne">
-    <div class="col-photo">
-      <img src="/projet4/public/images/livre1.jpg" alt="Couverture du livre" class="mon-compte-livre-img">
+  foreach ($livresUtilisateur as $livre) {
+
+?>
+    <div class="mon-compte-ligne">
+      <div class="col-photo">
+        <img
+          src="/projet4/public/images/<?php echo htmlspecialchars($livre['image']); ?>"
+          alt="Couverture du livre"
+          class="mon-compte-livre-img"
+        >
+      </div>
+
+      <div class="col-texte"><?php echo htmlspecialchars($livre['title']); ?></div>
+      <div class="col-texte"><?php echo htmlspecialchars($livre['author']); ?></div>
+
+      <div class="col-description">
+      <?php
+       $description = '';
+       if (isset($livre['description'])) {
+      $description = $livre['description'];
+      }
+
+  echo htmlspecialchars($description);
+  ?>
+</div>
+
+
+      <div class="col-statut">
+        <?php
+        if ((int)$livre['status'] === 1) {
+          echo '<span class="badge badge-disponible">disponible</span>';
+        } else {
+          echo '<span class="badge badge-nondispo">non dispo.</span>';
+        }
+        ?>
+      </div>
+
+      <div class="col-actions">
+        <a href="#" class="action-editer">Éditer</a>
+        <a href="#" class="action-supprimer">Supprimer</a>
+      </div>
     </div>
+<?php
+    $indexLigne++;
+  }
 
-    <div class="col-texte">The Kinfolk Table</div>
-    <div class="col-texte">Nathan Williams</div>
-
-    <div class="col-description">
-      J’ai récemment plongé dans les pages de “The Kinfolk Table” et j’ai été enchanté p...
-    </div>
-
-    <div class="col-statut">
-      <span class="badge badge-disponible">disponible</span>
-    </div>
-
-    <div class="col-actions">
-      <a href="#" class="action-editer">Éditer</a>
-      <a href="#" class="action-supprimer">Supprimer</a>
-    </div>
+} else {
+?>
+  <div style="padding: 18px 24px; color:#666;">
+    Vous n’avez encore aucun livre dans votre bibliothèque.
   </div>
+<?php
+}
+?>
 
-  <!-- Ligne 2 -->
-  <div class="mon-compte-ligne mon-compte-ligne-alt">
-    <div class="col-photo">
-      <img src="/projet4/public/images/livre2.jpg" alt="Couverture du livre" class="mon-compte-livre-img">
-    </div>
-
-    <div class="col-texte">The Kinfolk Table</div>
-    <div class="col-texte">Nathan Williams</div>
-
-    <div class="col-description">
-      J’ai récemment plongé dans les pages de “The Kinfolk Table” et j’ai été enchanté p...
-    </div>
-
-    <div class="col-statut">
-      <span class="badge badge-nondispo">non dispo.</span>
-    </div>
-
-    <div class="col-actions">
-      <a href="#" class="action-editer">Éditer</a>
-      <a href="#" class="action-supprimer">Supprimer</a>
-    </div>
-  </div>
-
-  <!-- Tu peux dupliquer encore 2 lignes si tu veux comme la maquette -->
 
 </div>
 

@@ -1029,3 +1029,17 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   .col-statut{grid-area: dispo}
   .col-actions{grid-area: actions}
 }
+
+/* Les lignes du tableau doivent rester en grille */
+.mon-compte-ligne{
+  display:grid;
+  grid-template-columns: 90px 180px 160px 1fr 140px 140px;
+  align-items:center;
+  padding:18px 20px;
+  border-bottom:1px solid rgba(0,0,0,0.06);
+}
+
+/* Alternance de fond : 1 ligne sur 2 */
+.mon-compte-tableau .mon-compte-ligne:nth-child(even){
+  background:#eef3f7;
+}

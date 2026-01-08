@@ -138,6 +138,7 @@ public function findByUserId(int $idUtilisateur): array
             b.title,
             b.author,
             b.image,
+            b.description,
             b.status,
             b.created_at
         FROM book b
