@@ -92,6 +92,8 @@
 
     <!-- TABLEAU : MES LIVRES -->
 <div class="mon-compte-tableau">
+  <a class="bouton" href="/projet4/public/?page=ajouter-livre">Ajouter un livre</a>
+
 
   <div class="mon-compte-tableau-entete">
     <div>Photo</div>
@@ -133,19 +135,28 @@ if (isset($livresUtilisateur) && is_array($livresUtilisateur) && count($livresUt
 </div>
 
 
-      <div class="col-statut">
-        <?php
-        if ((int)$livre['status'] === 1) {
-          echo '<span class="badge badge-disponible">disponible</span>';
-        } else {
-          echo '<span class="badge badge-nondispo">non dispo.</span>';
-        }
-        ?>
-      </div>
+   <div class="col-statut">
+  <form method="post" action="/projet4/public/?page=changer-disponibilite">
+    <input type="hidden" name="id_livre" value="<?php echo (int) $livre['id']; ?>">
+
+    <select name="status">
+      <option value="1" <?php if ((int)$livre['status'] === 1) { echo 'selected'; } ?>>Disponible</option>
+      <option value="0" <?php if ((int)$livre['status'] === 0) { echo 'selected'; } ?>>Non disponible</option>
+    </select>
+
+    <button type="submit">OK</button>
+  </form>
+</div>
+
 
       <div class="col-actions">
-        <a href="#" class="action-editer">Éditer</a>
-        <a href="#" class="action-supprimer">Supprimer</a>
+       <a href="/projet4/public/?page=editer-livre&id=<?php echo (int) $livre['id']; ?>" class="action-editer">Éditer</a>
+
+        <form method="post" action="/projet4/public/?page=supprimer-livre" style="display:inline;">
+         <input type="hidden" name="id_livre" value="<?php echo (int) $livre['id']; ?>">
+         <button type="submit" class="action-supprimer" onclick="return confirm('Confirmer la suppression ?');">Supprimer</button>
+        </form>
+
       </div>
     </div>
 <?php
