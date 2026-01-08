@@ -150,7 +150,8 @@ if (isset($livresUtilisateur) && is_array($livresUtilisateur) && count($livresUt
 
 
       <div class="col-actions">
-       <a href="/projet4/public/?page=editer-livre&id=<?php echo (int) $livre['id']; ?>" class="action-editer">Éditer</a>
+      <a href="/projet4/public/?page=editer-livre&id=<?php echo (int) $livre['id']; ?>" class="action-editer">Éditer</a>
+
 
         <form method="post" action="/projet4/public/?page=supprimer-livre" style="display:inline;">
          <input type="hidden" name="id_livre" value="<?php echo (int) $livre['id']; ?>">
