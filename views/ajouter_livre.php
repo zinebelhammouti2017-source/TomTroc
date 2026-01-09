@@ -13,8 +13,9 @@
                     <?php } ?>
                 </ul>
             </div>
-        <?php } ?>
+     <?php } ?>
 
+        <div class="livre-form-layout">
         <form method="post" action="/projet4/public/?page=ajouter-livre">
 
             <label for="title">Titre</label>
@@ -37,7 +38,7 @@
 
             <button type="submit">Ajouter</button>
         </form>
-
+        </div>
     </section>
 </main>
 

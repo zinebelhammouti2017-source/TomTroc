@@ -7,11 +7,10 @@ body{
   font-family: Arial, sans-serif;
   background:#f6f3ee;
   color:#111;
-  overflow-x: hidden;
+  overflow-x:hidden;
 }
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
-
 
 /* =========================
    LAYOUT GLOBAL
@@ -41,6 +40,7 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
 }
 .bouton-principal{background:#178f55;color:#fff}
 .bouton-secondaire{background:transparent;color:#178f55;border-color:#178f55}
+.bouton-plein{width:100%;margin-top:10px}
 
 /* =========================
    ACCUEIL : HERO
@@ -64,7 +64,7 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
 }
 
 /* =========================
-   CARTE LIVRE (style : texte à gauche, gris, image “flush”)
+   CARTE LIVRE
 ========================= */
 .livre-carte{
   background:#fff;
@@ -74,18 +74,14 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   flex-direction:column;
   text-align:left;
 }
-
-/* image qui colle aux bords */
 .livre-carte img{
   width:100%;
   height:240px;
   object-fit:cover;
 }
-
-/* bloc texte */
 .livre-carte h3{
   margin:14px 16px 6px;
-  font-size:26px;      
+  font-size:26px;
   font-weight:500;
   line-height:1.1;
 }
@@ -100,8 +96,6 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   font-style:italic;
   color:#b0b0b0;
 }
-
-/* lien “Voir le livre” en bas */
 .livre-carte a{
   margin-top:auto;
   padding:12px 16px 18px;
@@ -153,77 +147,60 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
    ACCUEIL : VALEURS
 ========================= */
 .accueil-valeurs{
-  margin-top: 80px;
-  
+  margin-top:80px;
 }
-
-
 .accueil-valeurs .valeurs-image{
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  margin-right:calc(50% - 50vw);
 }
-
 .accueil-valeurs .valeurs-image img{
-  width: 100%;
-  height: 230px; 
-  object-fit: cover;
-  display: block;
-  border-radius: 0;
+  width:100%;
+  height:230px;
+  object-fit:cover;
+  display:block;
+  border-radius:0;
 }
-
 .accueil-valeurs h2{
-  
-  margin: 0 0 24px;
-  text-align: left;
+  margin:0 0 24px;
+  text-align:left;
   font-family: Playfair Display;
-  font-weight: 400;
-  font-style: Regular;
-  font-size: 32px;
-  line-height: 100%;
-  letter-spacing: 0%;
- 
-
+  font-weight:400;
+  font-style:Regular;
+  font-size:32px;
+  line-height:100%;
+  letter-spacing:0%;
 }
-
-
-
 .accueil-valeurs .valeurs-contenu{
-  position: relative;
-  max-width: 720px;
-  margin: 0 auto;
-  padding-top: 40px;      /* espace entre l'image et le titre */
-  padding-right: 160px;   
+  position:relative;
+  max-width:720px;
+  margin:0 auto;
+  padding-top:40px;
+  padding-right:160px;
 }
 .accueil-valeurs .valeurs-contenu p{
-  font-size: 14px;
-  line-height: 1.6;
-  color: #444;
-  margin: 0 0 16px;
+  font-size:14px;
+  line-height:1.6;
+  color:#444;
+  margin:0 0 16px;
 }
-
 .valeurs-signature{
-  font-size: 12px;
-  font-style: italic;
-  color: #A6A6A6;
-  margin-top: 10px;
-
+  font-size:12px;
+  font-style:italic;
+  color:#A6A6A6;
+  margin-top:10px;
 }
-
 .valeurs-coeur{
-  position: absolute;
-  right: 80px;           
-  bottom: -100px;           /* remonte légèrement */
-  width: 140px;         
+  position:absolute;
+  right:80px;
+  bottom:-100px;
+  width:140px;
 }
-
 .valeurs-coeur svg{
-  display: block;
-  width: 100%;
-  height: auto;
+  display:block;
+  width:100%;
+  height:auto;
 }
-
 
 /* =========================
    PAGE LIVRES : entête + recherche
@@ -255,7 +232,6 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   border-color:rgba(23,143,85,.6);
   box-shadow:0 0 0 3px rgba(23,143,85,.12);
 }
-
 .lien-voir-tous{display:inline-block;margin-top:10px;opacity:.75}
 .lien-voir-tous:hover{opacity:1;text-decoration:underline}
 
@@ -299,148 +275,99 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   border-radius:999px;
   border:1px solid rgba(0,0,0,.12);
 }
-.livre-avatar{
-  width:28px;height:28px;border-radius:50%;
-  background:rgba(0,0,0,.12);
-}
+.livre-avatar{width:28px;height:28px;border-radius:50%;background:rgba(0,0,0,.12)}
 
 /* =========================
-   PAGE : CONNEXION/INSCRIPTION
+   COMPOSANT : MESSAGE ERREUR
 ========================= */
-
-.page-connexion{
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 60px 16px;
-  overflow-x: hidden; /* sécurité anti scroll horizontal */
-}
-
-/* conteneur full largeur maîtrisé */
-.connexion-layout-full{
-  width: 100%;
-}
-
-/* grille principale */
-.connexion-layout{
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 420px 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-/* colonne formulaire */
-.connexion-colonne{
-  width: 100%;
-}
-
-/* titre */
-.connexion-titre{
-  margin: 0 0 24px;
-  font-size: 38px;
-  line-height: 1.1;
-  font-weight: 700;
-}
-
-/* formulaire */
-.connexion-form{
-  display: grid;
-  gap: 14px;
-}
-
-.champ-label{
-  font-size: 12px;
-  opacity: 0.7;
-}
-
-.champ-input{
-  width: 100%;
-  height: 44px;
-  padding: 0 12px;
-  border-radius: 10px;
-  border: 1px solid rgba(0,0,0,0.12);
-  background: #fff;
-  outline: none;
-}
-
-.champ-input:focus{
-  border-color: rgba(23,143,85,0.6);
-  box-shadow: 0 0 0 3px rgba(23,143,85,0.12);
-}
-
-/* bouton */
-.bouton-plein{
-  width: 100%;
-  margin-top: 10px;
-}
-
-/* texte inscription */
-.connexion-texte{
-  margin-top: 14px;
-  font-size: 12px;
-  opacity: 0.75;
-}
-
-.connexion-lien{
-  font-weight: 600;
-}
-
-.connexion-lien:hover{
-  text-decoration: underline;
-}
-
-/* colonne image */
-.connexion-image{
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  
-  padding-left: 80px; 
-} 
-
-/* image */
-.connexion-image img{
-  width: 886px;
-  height: 730px;
-    margin-top: -60px;     /* ← monte l’image */
-     margin-left: 40px;
-     left: 40px;
-}
-
 .message-erreur{
   background:#fff;
-  border:1px solid rgba(0,0,0,.12);
+  border:1px solid rgba(220,53,69,.25);
   border-radius:12px;
   padding:12px 14px;
   margin:0 0 16px;
 }
+.message-erreur ul{margin:0;padding-left:18px}
 .message-erreur p{margin:0 0 6px}
 .message-erreur p:last-child{margin-bottom:0}
 
+/* =========================
+   PAGE : CONNEXION/INSCRIPTION
+========================= */
+.page-connexion{
+  max-width:1100px;
+  margin:0 auto;
+  padding:60px 16px;
+  overflow-x:hidden;
+}
+.connexion-layout-full{width:100%}
+.connexion-layout{
+  max-width:1100px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:420px 1fr;
+  gap:80px;
+  align-items:center;
+}
+.connexion-colonne{width:100%}
+.connexion-titre{
+  margin:0 0 24px;
+  font-size:38px;
+  line-height:1.1;
+  font-weight:700;
+}
+.connexion-form{display:grid;gap:14px}
 
-/* responsive */
- @media (max-width: 900px){
-  .connexion-layout{
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
+.champ-label{font-size:12px;opacity:.7}
+.champ-input{
+  width:100%;
+  height:44px;
+  padding:0 12px;
+  border-radius:10px;
+  border:1px solid rgba(0,0,0,0.12);
+  background:#fff;
+  outline:none;
+}
+.champ-input:focus{
+  border-color:rgba(23,143,85,0.6);
+  box-shadow:0 0 0 3px rgba(23,143,85,0.12);
+}
 
-  .connexion-image{
-    padding-left: 0;
-  }
+.connexion-texte{
+  margin-top:14px;
+  font-size:12px;
+  opacity:.75;
+}
+.connexion-lien{font-weight:600}
+.connexion-lien:hover{text-decoration:underline}
 
+.connexion-image{
+  width:100%;
+  display:flex;
+  justify-content:flex-start;
+  padding-left:80px;
+}
+.connexion-image img{
+  width:886px;
+  height:730px;
+  margin-top:-60px;
+  margin-left:40px;
+  left:40px;
+}
+
+@media (max-width:900px){
+  .connexion-layout{grid-template-columns:1fr;gap:32px}
+  .connexion-image{padding-left:0}
   .connexion-image img{
-    width: 100%;
-    height: auto;
-    max-width: 720px;
+    width:100%;
+    height:auto;
+    max-width:720px;
   }
 }
 
 /* =========================
-   PAGE : MON COMPTE 
+   PAGE : MON COMPTE
 ========================= */
-
 .page-mon-compte{
   max-width:1100px;
   margin:0 auto;
@@ -454,31 +381,23 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   font-weight:700;
 }
 
-/* 2 cartes en ligne */
 .mon-compte-blocs{
   display:grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns:1fr 1fr;
   gap:24px;
   align-items:start;
 }
 
-/* Cartes */
 .mon-compte-profil,
 .mon-compte-infos{
   background:#fff;
   border-radius:16px;
   padding:32px;
-      height: 400px;
+  height:400px;
 }
 
-/* =========================
-   CARTE PROFIL (gauche)
-========================= */
-.mon-compte-profil{
-  text-align:center;
-}
+.mon-compte-profil{text-align:center}
 
-/* Photo ronde */
 .mon-compte-avatar{
   width:140px;
   height:140px;
@@ -488,7 +407,6 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   margin:6px auto 8px;
 }
 
-/* lien "modifier" */
 .mon-compte-modifier{
   display:inline-block;
   font-size:14px;
@@ -496,40 +414,26 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   text-decoration:underline;
   text-underline-offset:6px;
 }
+.mon-compte-modifier:hover{color:#8f8f8f}
 
-.mon-compte-modifier:hover{
-  color:#8f8f8f;
-}
-
-/* ligne de séparation */
 .mon-compte-separateur{
   border:0;
   border-top:1px solid rgba(0,0,0,0.08);
   margin:24px 0;
 }
 
-/* pseudo  */
 .mon-compte-pseudo{
   margin:0 0 10px;
   font-size:24px;
   line-height:1.1;
   font-weight:500;
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-family:"Playfair Display", Georgia, "Times New Roman", serif;
   color:#111;
 }
 
-/* "Membre depuis ..." */
-.mon-compte-info{
-  margin:0;
-  font-size:14px;
-  color:#b0b0b0;
-}
+.mon-compte-info{margin:0;font-size:14px;color:#b0b0b0}
 
-/* bloc bibliothèque */
-.mon-compte-biblio{
-  margin-top:22px;
-}
-
+.mon-compte-biblio{margin-top:22px}
 .mon-compte-biblio-titre{
   margin:0 0 10px;
   font-size:12px;
@@ -539,7 +443,6 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   font-weight:700;
 }
 
-/* ligne icône + nombre */
 .mon-compte-biblio-ligne{
   display:flex;
   align-items:center;
@@ -547,28 +450,17 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   gap:10px;
   color:#111;
 }
+.mon-compte-biblio-icone{font-size:16px;line-height:1}
+.mon-compte-biblio-nombre{font-size:18px;font-weight:500}
 
-.mon-compte-biblio-icone{
-  font-size:16px; /* si c'est un emoji/icone */
-  line-height:1;
-}
-
-.mon-compte-biblio-nombre{
-  font-size:18px;
-  font-weight:500;
-}
-
-/* =========================
-   CARTE INFOS (droite)
-========================= */
 .mon-compte-sous-titre{
   margin:0 0 18px;
   font-size:18px;
   font-weight:600;
   color:#111;
+  text-align: left;
 }
 
-/* Labels espacés */
 .mon-compte-infos .champ-label{
   display:block;
   margin:16px 0 6px;
@@ -576,7 +468,6 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   opacity:.7;
 }
 
-/* Inputs style "gris clair" */
 .mon-compte-infos .champ-input{
   background:#eef3f7;
   border:0;
@@ -585,13 +476,11 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   padding:0 14px;
 }
 
-/* focus propre */
 .mon-compte-infos .champ-input:focus{
   outline:none;
   box-shadow:0 0 0 3px rgba(23,143,85,0.12);
 }
 
-/* bouton Enregistrer (cadre vert + fond transparent ) */
 .mon-compte-infos .bouton-plein{
   width:220px;
   margin-top:22px;
@@ -602,158 +491,236 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   color:#178f55;
   font-weight:700;
 }
+.mon-compte-infos .bouton-plein:hover{background:rgba(23,143,85,0.08)}
 
-.mon-compte-infos .bouton-plein:hover{
-  background:rgba(23,143,85,0.08);
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
 @media (max-width:900px){
-  .mon-compte-blocs{
-    grid-template-columns:1fr;
-  }
-
-  .mon-compte-infos .bouton-plein{
-    width:100%;
-  }
+  .mon-compte-blocs{grid-template-columns:1fr}
+  .mon-compte-infos .bouton-plein{width:100%}
 }
 
 /* =========================
-   PAGE : MON COMPTE (TABLEAU)
+   MON COMPTE : TABLEAU LIVRES (VERSION UNIQUE)
 ========================= */
-
 .mon-compte-tableau{
-
-   background:#fff;
+  margin-top:50px;
+  background:#fff;
   border-radius:16px;
-  padding:32px;
-      height: 400px;
+  overflow:hidden;
+  border:1px solid rgba(0,0,0,0.08);
 }
 
-/* Entête du tableau */
 .mon-compte-tableau-entete{
-  display: grid;
-  grid-template-columns: 90px 190px 160px 1fr 150px 140px;
-  gap: 0;
-  padding: 18px 24px;
-  font-size: 11px;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  color: rgba(0,0,0,.55);
-  border-bottom: 1px solid rgba(0,0,0,.08);
+  display:grid;
+  grid-template-columns:90px 180px 160px 1fr 170px 170px;
+  padding:18px 20px;
+  border-bottom:1px solid rgba(0,0,0,0.08);
+  font-size:11px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:rgba(0,0,0,.55);
+  background:rgba(0,0,0,0.03);
 }
 
-/* Une ligne du tableau */
 .mon-compte-ligne{
-  display: grid;
-  grid-template-columns: 90px 190px 160px 1fr 150px 140px;
-  align-items: center;
-  padding: 18px 24px;
-  gap: 0;
-  border-bottom: 1px solid rgba(0,0,0,.06);
+  display:grid;
+  grid-template-columns:90px 180px 160px 1fr 170px 170px;
+  align-items:center;
+  padding:18px 20px;
+  border-bottom:1px solid rgba(0,0,0,0.06);
 }
 
-.mon-compte-ligne-alt{
-  background: #eef3f6;
+.mon-compte-tableau .mon-compte-ligne:nth-child(even){
+  background:#eef3f7;
 }
 
-.mon-compte-tableau .mon-compte-ligne:last-child{
-  border-bottom: none;
-}
+.col-photo{display:flex;align-items:center}
 
-/* Colonne photo */
 .mon-compte-livre-img{
-  width: 24px;
-  height: 24px;
-  border-radius: 10px;
-  object-fit: cover;
-  display: block;
+  width:52px;
+  height:52px;
+  border-radius:10px;
+  object-fit:cover;
+  display:block;
+  border:1px solid rgba(0,0,0,0.08);
 }
 
-/* Texte */
-.col-texte{
-  font-size: 13px;
-  color: rgba(0,0,0,.75);
-}
+.col-texte{font-size:13px;color:#111}
 
 .col-description{
-  font-size: 12px;
-  color: rgba(0,0,0,.55);
-  line-height: 1.4;
-  max-width: 420px;
+  font-size:12px;
+  color:#666;
+  line-height:1.4;
+  display:-webkit-box;
+  -webkit-line-clamp:3;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
 }
 
-/* Badges disponibilité */
 .badge{
-  display: inline-block;
-  padding: 6px 12px;
-  border-radius: 999px;
-  font-size: 11px;
-  font-weight: 600;
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:600;
+  line-height:1;
+}
+.badge-disponible{background:rgba(23,143,85,0.18);color:#178f55}
+.badge-nondispo{background:rgba(214,79,79,0.18);color:#d64f4f}
+
+.col-statut form{display:flex;gap:8px;align-items:center}
+.col-statut select{
+  padding:8px 10px;
+  border-radius:10px;
+  border:1px solid rgba(0,0,0,0.15);
+  background:#fff;
+  font-size:13px;
+}
+.col-statut button{
+  padding:8px 12px;
+  border-radius:10px;
+  border:none;
+  cursor:pointer;
+  font-weight:700;
 }
 
-.badge-disponible{
-  background: rgba(23,143,85,.20);
-  color: #178f55;
-}
-
-.badge-nondispo{
-  background: rgba(219, 84, 84, .20);
-  color: #b93a3a;
-}
-
-/* Actions */
-.col-actions{
-  display: flex;
-  gap: 18px;
-  justify-content: flex-start;
-  align-items: center;
-}
+.col-actions{display:flex;gap:16px;align-items:center}
 
 .action-editer{
-  font-size: 12px;
-  color: rgba(0,0,0,.65);
-  text-decoration: underline;
+  display:inline-block;
+  padding:8px 10px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:700;
+  border:1px solid rgba(0,0,0,0.15);
+  background:#fff;
 }
 
 .action-supprimer{
-  font-size: 12px;
-  color: #d14b4b;
-  text-decoration: underline;
+  padding:8px 10px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:700;
+  border:1px solid rgba(220,53,69,0.25);
+  background:rgba(220,53,69,0.08);
+  cursor:pointer;
+}
+
+.bouton-ajouter-livre{
+  display:inline-block;
+  margin-top:14px;
+  padding:10px 12px;
+  border-radius:20px;
+  margin-bottom:10px;
+  margin-left:10px;
+  font-weight:600;
+  border:1px solid rgba(0,0,0,0.15);
+  background:#fff;
+}
+
+@media (max-width:900px){
+  .mon-compte-tableau-entete{display:none}
+
+  .mon-compte-ligne{
+    grid-template-columns:70px 1fr;
+    grid-template-areas:
+      "photo titre"
+      "photo auteur"
+      "photo desc"
+      "photo dispo"
+      "photo actions";
+    gap:6px 14px;
+  }
+
+  .col-photo{grid-area:photo}
+  .col-texte:nth-of-type(1){grid-area:titre}
+  .col-texte:nth-of-type(2){grid-area:auteur}
+  .col-description{grid-area:desc}
+  .col-statut{grid-area:dispo}
+  .col-actions{grid-area:actions}
 }
 
 /* =========================
-   RESPONSIVE tableau
+   PAGES LIVRES : AJOUT / EDIT
 ========================= */
-@media (max-width: 900px){
-  .mon-compte-tableau-entete{
-    display: none; /* comme souvent sur mobile */
-  }
-
-  .mon-compte-ligne,
-  .mon-compte-ligne-alt{
-    grid-template-columns: 70px 1fr;
-    gap: 10px 16px;
-  }
-
-  /* On “regroupe” visuellement */
-  .col-texte:nth-of-type(1){
-    font-weight: 600;
-  }
-
-  .col-description,
-  .col-statut,
-  .col-actions{
-    grid-column: 1 / -1;
-  }
-
-  .col-actions{
-    margin-top: 6px;
-  }
+.page-ajouter-livre,
+.page-editer-livre{
+  max-width:1100px;
+  margin:0 auto;
+  padding:60px 16px;
 }
 
+.bloc-formulaire{
+  max-width:920px;
+  margin:0 auto;
+  background:#fff;
+  border:1px solid rgba(0,0,0,0.08);
+  border-radius:16px;
+  padding:32px;
+}
+
+.bloc-formulaire h1{
+  margin:0 0 18px;
+  font-size:28px;
+  font-weight:700;
+}
+
+.bloc-formulaire form{
+  display:grid;
+  gap:14px;
+}
+
+.bloc-formulaire label{
+  font-size:12px;
+  opacity:0.7;
+  margin-top:6px;
+}
+
+.bloc-formulaire input,
+.bloc-formulaire textarea,
+.bloc-formulaire select{
+  width:100%;
+  border-radius:10px;
+  border:1px solid rgba(0,0,0,0.12);
+  background:#eef3f7;
+  outline:none;
+  font-size:14px;
+}
+
+.bloc-formulaire input,
+.bloc-formulaire select{
+  height:44px;
+  padding:0 12px;
+}
+
+.bloc-formulaire textarea{
+  min-height:140px;
+  padding:12px;
+  resize:vertical;
+}
+
+.bloc-formulaire input:focus,
+.bloc-formulaire textarea:focus,
+.bloc-formulaire select:focus{
+  border-color: rgba(23,143,85,0.6);
+  box-shadow: 0 0 0 3px rgba(23,143,85,0.12);
+}
+
+.bloc-formulaire button{
+  margin-top:10px;
+  width:260px;
+  padding:12px 18px;
+  border-radius:12px;
+  background:#178f55;
+  color:#fff;
+  border:none;
+  font-weight:700;
+  cursor:pointer;
+}
+
+@media (max-width:900px){
+  .bloc-formulaire{padding:24px}
+  .bloc-formulaire button{width:100%}
+}
 
 /* =========================
    HEADER
@@ -762,7 +729,6 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   background:#f6f3ee;
   padding:18px 0;
 }
-
 .site-header-contenu{
   max-width:1100px;
   margin:0 auto;
@@ -772,15 +738,13 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   justify-content:space-between;
   gap:24px;
 }
-
 .site-logo{
   display:flex;
   align-items:center;
   gap:10px;
   font-weight:600;
-  text-decoration: none;
+  text-decoration:none;
 }
-
 .site-logo-badge{
   width:51px;
   height:51px;
@@ -791,26 +755,20 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   align-items:center;
   justify-content:center;
   font-weight:700;
-
-  position: relative;   /* IMPORTANT : base pour l’absolu */
-  overflow: hidden;    
+  position:relative;
+  overflow:hidden;
 }
-
 .logo-image{
   position:absolute;
   top:50%;
   left:50%;
   transform:translate(-50%, -50%);
-  width:30px;      
+  width:30px;
   height:auto;
   display:block;
-  pointer-events:none; /*évite bugs de clic sur le logo */
+  pointer-events:none;
 }
-
-.site-logo-texte{
-  font-size:14px;
-  color:#178f55;
-}
+.site-logo-texte{font-size:14px;color:#178f55}
 
 .site-nav,
 .site-nav-droite{
@@ -818,18 +776,8 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   align-items:center;
   gap:22px;
 }
-
-.site-nav-lien{
-  font-size:13px;
-  opacity:0.85;
-}
-
-.site-nav-lien:hover{
-  opacity:1;
-  text-decoration:underline;
-}
-
-
+.site-nav-lien{font-size:13px;opacity:.85}
+.site-nav-lien:hover{opacity:1;text-decoration:underline}
 
 /* =========================
    FOOTER
@@ -839,7 +787,6 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   margin-top:80px;
   padding:24px 0;
 }
-
 .site-footer-contenu{
   max-width:1100px;
   margin:0 auto;
@@ -849,42 +796,27 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   justify-content:flex-end;
   gap:28px;
 }
-
 .site-footer-lien,
 .site-footer-texte{
   font-size:12px;
-  opacity:0.7;
+  opacity:.7;
 }
+.site-footer-lien:hover{opacity:1;text-decoration:underline}
+.site-footer-logo{margin-left:10px;align-items:center}
 
-.site-footer-lien:hover{
-  opacity:1;
-  text-decoration:underline;
-}
-
-.site-footer-logo{
-  margin-left:10px;
-   align-items:center;
-}
-
-/* =========================
-   RESPONSIVE HEADER/FOOTER
-========================= */
 @media (max-width:900px){
   .site-header-contenu{
     flex-wrap:wrap;
     justify-content:center;
   }
-
   .site-footer-contenu{
     justify-content:center;
     flex-wrap:wrap;
   }
 }
 
-
-
 /* =========================
-   RESPONSIVE
+   RESPONSIVE GLOBAL
 ========================= */
 @media (max-width:900px){
   .accueil-hero{grid-template-columns:1fr;text-align:center}
@@ -900,146 +832,92 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   .livres-entete h1{font-size:28px}
   h1{font-size:30px}
 }
-
 /* =========================
-   MON COMPTE : TABLEAU LIVRES
+   POLISH UI : boutons / focus / actions
 ========================= */
 
-.mon-compte-tableau{
-  margin-top: 50px;
-  background: #fff;
-  border-radius: 16px;
-  overflow: hidden;
+/* transitions douces */
+.action-editer,
+.action-supprimer,
+.bouton-ajouter-livre,
+.bloc-formulaire button,
+.col-statut select{
+  transition: 0.15s ease;
 }
 
-/* entête */
-.mon-compte-tableau-entete{
-  display: grid;
-  grid-template-columns: 90px 180px 160px 1fr 140px 140px;
-  gap: 0;
-  padding: 18px 20px;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  opacity: 0.7;
-}
-
-/* lignes */
-.mon-compte-ligne{
-  display: grid;
-  grid-template-columns: 90px 180px 160px 1fr 140px 140px;
-  align-items: center;
-  padding: 18px 20px;
-  border-bottom: 1px solid rgba(0,0,0,0.06);
-}
-
-.mon-compte-ligne-alt{
-  background: #eef3f7; 
-}
-
-.col-photo{
-  display: flex;
-  align-items: center;
-}
-
-.mon-compte-livre-img{
-  width: 52px;
-  height: 52px;
-  border-radius: 10px;
-  object-fit: cover;
-  display: block;
-}
-
-/* texte */
-.col-texte{
-  font-size: 13px;
-  color: #111;
-}
-
-.col-description{
-  font-size: 12px;
-  color: #666;
-  line-height: 1.4;
-
-  /* coupe le texte comme "..." */
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-/* badges */
-.badge{
-  display: inline-block;
-  padding: 6px 10px;
-  border-radius: 999px;
-  font-size: 11px;
-  line-height: 1;
-}
-
-.badge-disponible{
-  background: rgba(23,143,85,0.18);
-  color: #178f55;
-}
-
-.badge-nondispo{
-  background: rgba(214,79,79,0.18);
-  color: #d64f4f;
-}
-
-/* actions */
+/* Actions tableau : alignement propre */
 .col-actions{
-  display: flex;
-  gap: 16px;
-  font-size: 12px;
+  gap: 12px;
 }
 
 .action-editer{
-  color: #777;
-  text-decoration: underline;
+  color: #111;
+}
+.action-editer:hover{
+  background: rgba(0,0,0,0.03);
+  border-color: rgba(0,0,0,0.22);
 }
 
-.action-supprimer{
-  color: #d64f4f;
-  text-decoration: underline;
+.action-supprimer:hover{
+  background: rgba(220,53,69,0.14);
+  border-color: rgba(220,53,69,0.35);
 }
 
-/* responsive */
-@media (max-width: 900px){
-  .mon-compte-tableau-entete{
-    display:none; /* sur mobile on cache l'entête */
-  }
-
-  .mon-compte-ligne{
-    grid-template-columns: 70px 1fr;
-    grid-template-areas:
-      "photo titre"
-      "photo auteur"
-      "photo desc"
-      "photo dispo"
-      "photo actions";
-    gap: 6px 14px;
-  }
-
-  .col-photo{grid-area: photo}
-  .col-texte:nth-of-type(1){grid-area: titre}
-  .col-texte:nth-of-type(2){grid-area: auteur}
-  .col-description{grid-area: desc}
-  .col-statut{grid-area: dispo}
-  .col-actions{grid-area: actions}
-}
-
-/* Les lignes du tableau doivent rester en grille */
-.mon-compte-ligne{
-  display:grid;
-  grid-template-columns: 90px 180px 160px 1fr 140px 140px;
-  align-items:center;
-  padding:18px 20px;
-  border-bottom:1px solid rgba(0,0,0,0.06);
-}
-
-/* Alternance de fond : 1 ligne sur 2 */
-.mon-compte-tableau .mon-compte-ligne:nth-child(even){
+/* select dispo : plus “TomTroc” */
+.col-statut select{
   background:#eef3f7;
+  border:1px solid rgba(0,0,0,0.12);
+  height: 44px;
+  padding: 0 12px;
+}
+
+/* focus propre */
+.col-statut select:focus,
+.bloc-formulaire input:focus,
+.bloc-formulaire textarea:focus,
+.bloc-formulaire select:focus{
+  outline: none;
+  border-color: rgba(23,143,85,0.6);
+  box-shadow: 0 0 0 3px rgba(23,143,85,0.12);
+}
+
+/* bouton ajouter livre : style “secondary” */
+.bouton-ajouter-livre{
+  background: transparent;
+  border-color:#178f55;
+  color:#178f55;
+}
+.bouton-ajouter-livre:hover{
+  background: rgba(23,143,85,0.08);
+}
+
+/* Formulaires ajouter/éditer : plus proches de ta charte */
+.bloc-formulaire{
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+.bloc-formulaire h1{
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-weight: 500;
+}
+
+/* bouton principal des formulaires */
+.bloc-formulaire button{
+  background:#178f55;
+}
+.bloc-formulaire button:hover{
+  filter: brightness(0.95);
+}
+.bloc-formulaire button:active{
+  transform: translateY(1px);
+}
+
+/* Tableau : un peu plus “airy” */
+.mon-compte-tableau{
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+}
+.mon-compte-ligne{
+  min-height: 84px;
+}
+.livre-form-layout{
+  margin-top: 18px;
 }

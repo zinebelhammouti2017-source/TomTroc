@@ -14,6 +14,8 @@
                 </ul>
             </div>
         <?php } ?>
+        
+          <div class="livre-form-layout">
 
         <form method="post" action="/projet4/public/?page=editer-livre&id=<?php echo (int) $idLivre; ?>">
 
@@ -37,7 +39,7 @@
 
             <button type="submit">Enregistrer</button>
         </form>
-
+         </div>
     </section>
 </main>
 

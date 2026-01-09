@@ -92,7 +92,7 @@
 
     <!-- TABLEAU : MES LIVRES -->
 <div class="mon-compte-tableau">
-  <a class="bouton" href="/projet4/public/?page=ajouter-livre">Ajouter un livre</a>
+  <a class="bouton-ajouter-livre" href="/projet4/public/?page=ajouter-livre">Ajouter un livre</a>
 
 
   <div class="mon-compte-tableau-entete">
@@ -143,15 +143,12 @@ if (isset($livresUtilisateur) && is_array($livresUtilisateur) && count($livresUt
       <option value="1" <?php if ((int)$livre['status'] === 1) { echo 'selected'; } ?>>Disponible</option>
       <option value="0" <?php if ((int)$livre['status'] === 0) { echo 'selected'; } ?>>Non disponible</option>
     </select>
-
-    <button type="submit">OK</button>
   </form>
 </div>
 
 
       <div class="col-actions">
-      <a href="/projet4/public/?page=editer-livre&id=<?php echo (int) $livre['id']; ?>" class="action-editer">Éditer</a>
-
+       <a href="/projet4/public/?page=editer-livre&id=<?php echo (int) $livre['id']; ?>" class="action-editer">Éditer</a>
 
         <form method="post" action="/projet4/public/?page=supprimer-livre" style="display:inline;">
          <input type="hidden" name="id_livre" value="<?php echo (int) $livre['id']; ?>">
