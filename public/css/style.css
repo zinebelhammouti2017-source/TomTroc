@@ -1141,3 +1141,33 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
     max-width: 90%;
   }
 }
+
+/* Bouton retour : caché par défaut (desktop) */
+.page-messagerie .conversation-retour{
+  display: none !important;
+  font-weight: 600;
+  color: #444;
+  text-decoration: none;
+}
+
+/* Mobile : on affiche le bouton quand une conversation est ouverte */
+@media (max-width: 900px){
+
+  .messagerie-grille{
+    display: block;
+  }
+
+  .mobile-conversation-active .messagerie-liste{
+    display: none;
+  }
+
+  .mobile-conversation-active .messagerie-conversation{
+    display: block;
+  }
+
+  .page-messagerie.mobile-conversation-active .conversation-retour{
+    display: inline-block !important;
+    margin-bottom: 12px;
+  }
+}
+

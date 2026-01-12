@@ -1,6 +1,7 @@
 <?php require_once __DIR__ . '/templates/header.php'; ?>
 
-<main class="page-messagerie">
+<main class="page-messagerie<?php echo ((int)$conversationId > 0) ? ' mobile-conversation-active' : ''; ?>">
+
   <section class="messagerie-layout">
 
     <h1 class="messagerie-titre">Messagerie</h1>
@@ -69,6 +70,8 @@
 
           <!-- Header conversation (avatar + pseudo) -->
           <div class="conversation-header">
+            <a class="conversation-retour" href="/projet4/public/?page=messagerie">← retour</a>
+
 
             <img
               class="conversation-avatar"
