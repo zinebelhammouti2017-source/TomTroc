@@ -38,9 +38,11 @@
         </div>
       </div>
 
-      <a class="bouton bouton-principal" href="#">
+      <a class="bouton bouton-principal"
+        href="/projet4/public/?page=demarrer-conversation&user_id=<?php echo (int) $livre['owner_id']; ?>">
         Envoyer un message
       </a>
+
 
     </div>
   </section>

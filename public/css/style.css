@@ -921,3 +921,223 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
 .livre-form-layout{
   margin-top: 18px;
 }
+
+/* =========================
+   MESSAGERIE - CSS FINAL (adapté à tes classes)
+========================= */
+
+.page-messagerie{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 16px;
+}
+
+.messagerie-titre{
+  font-size: 38px;
+  font-weight: 700;
+  margin: 0 0 26px;
+}
+
+/* grille 2 colonnes */
+.messagerie-grille{
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 26px;
+  align-items: stretch;
+}
+
+/* colonne gauche */
+.messagerie-liste{
+  background: #fAF9F7;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.08);
+  padding: 18px;
+  height: 560px;
+  overflow-y: auto;
+}
+
+/* chaque conversation = lien bloc */
+.liste-conversation{
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,0.06);
+  padding: 12px;
+  margin-bottom: 12px;
+  background: #fff;
+  transition: 0.15s ease;
+}
+
+.liste-conversation:hover{
+  background: #fff;
+}
+
+.liste-conversation-active{
+  background: #FFF;
+  border-color: rgba(23,143,85,0.25);
+}
+
+.liste-conversation:focus{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(23,143,85,0.15);
+}
+
+/* ligne avatar + texte */
+.conversation-ligne{
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.conversation-avatar{
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+.conversation-texte{
+  min-width: 0;
+}
+
+.conversation-pseudo{
+  margin: 0 0 4px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.conversation-date{
+  margin: 0;
+  font-size: 12px;
+  color: rgba(0,0,0,0.55);
+}
+
+/* colonne droite */
+.messagerie-conversation{
+  background: #fAF9F7;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.08);
+  padding: 18px;
+  height: 560px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* header conversation */
+.conversation-header{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  margin-bottom: 12px;
+}
+
+.conversation-nom{
+  margin: 0;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* zone messages scrollable */
+.messages-liste{
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+/* messages (base) */
+.message-item{
+  max-width: 70%;
+  border-radius: 12px;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.message-contenu{
+  margin: 0 0 6px;
+  font-size: 13px;
+  color: rgba(0,0,0,0.75);
+  line-height: 1.35;
+}
+
+.message-date{
+  margin: 0;
+  font-size: 11px;
+  color: rgba(0,0,0,0.45);
+}
+
+/* bulles gauche/droite */
+.message-moi{
+  margin-left: auto;
+  background: rgba(23,143,85,0.10);
+  border-color: rgba(23,143,85,0.20);
+}
+
+.message-autre{
+  margin-right: auto;
+  background: #fff;
+}
+
+/* barre d’envoi */
+.message-form{
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
+  margin-top: 12px;
+}
+
+.message-text{
+  flex: 1;
+  min-height: 44px;
+  max-height: 110px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.12);
+  background: #eef3f7;
+  padding: 12px 14px;
+  resize: vertical;
+  outline: none;
+}
+
+.message-text:focus{
+  border-color: rgba(23,143,85,0.6);
+  box-shadow: 0 0 0 3px rgba(23,143,85,0.12);
+}
+
+.envoyer_message{
+  width: 180px;
+  border: none;
+  border-radius: 12px;
+  background: #178f55;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.envoyer_message:hover{
+  filter: brightness(0.95);
+}
+
+/* responsive mobile */
+@media (max-width: 900px){
+  .messagerie-grille{
+    grid-template-columns: 1fr;
+  }
+
+  .messagerie-liste,
+  .messagerie-conversation{
+    height: auto;
+    min-height: 320px;
+  }
+
+  .envoyer_message{
+    width: 140px;
+  }
+
+  .message-item{
+    max-width: 90%;
+  }
+}

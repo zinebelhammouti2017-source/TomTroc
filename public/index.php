@@ -1,4 +1,8 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 session_start();
 
 require_once __DIR__ . '/../Controllers/AccueilController.php';
@@ -8,6 +12,7 @@ require_once __DIR__ . '/../Controllers/ConnexionController.php';
 require_once __DIR__ . '/../Controllers/InscriptionController.php';
 require_once __DIR__ . '/../Controllers/MonCompteController.php';
 require_once __DIR__ . '/../Controllers/GestionLivreController.php';
+require_once __DIR__ . '/../Controllers/MessagerieController.php';
 
 $page = $_GET['page'] ?? 'accueil';
 
@@ -61,6 +66,22 @@ switch ($page) {
         $controller = new GestionLivreController();
         $controller->changerDisponibilite();
         break;
+
+  case 'messagerie':
+    $controller = new MessagerieController();
+    $controller->afficher();
+    break;
+
+case 'envoyer-message':
+    $controller = new MessagerieController();
+    $controller->envoyerMessage();
+    break;
+
+case 'demarrer-conversation':
+    $controller = new MessagerieController();
+    $controller->demarrerConversation();
+    break;
+    
 
     default:
         echo "Page non trouvée";
