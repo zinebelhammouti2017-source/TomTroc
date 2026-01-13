@@ -24,7 +24,7 @@ a{color:inherit;text-decoration:none}
 /* =========================
    TITRES
 ========================= */
-h1{margin:0 0 12px;font-size:38px;line-height:1.1}
+h1{margin:0px 0px 12px;font-size:26px;line-height:1.1}
 h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
 
 /* =========================
@@ -642,85 +642,165 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
 /* =========================
    PAGES LIVRES : AJOUT / EDIT
 ========================= */
-.page-ajouter-livre,
-.page-editer-livre{
-  max-width:1100px;
-  margin:0 auto;
-  padding:60px 16px;
-}
-
-.bloc-formulaire{
-  max-width:920px;
-  margin:0 auto;
-  background:#fff;
-  border:1px solid rgba(0,0,0,0.08);
-  border-radius:16px;
-  padding:32px;
-}
-
-.bloc-formulaire h1{
-  margin:0 0 18px;
-  font-size:28px;
-  font-weight:700;
-}
-
-.bloc-formulaire form{
-  display:grid;
-  gap:14px;
-}
-
-.bloc-formulaire label{
-  font-size:12px;
-  opacity:0.7;
-  margin-top:6px;
-}
-
-.bloc-formulaire input,
-.bloc-formulaire textarea,
-.bloc-formulaire select{
-  width:100%;
-  border-radius:10px;
-  border:1px solid rgba(0,0,0,0.12);
-  background:#eef3f7;
-  outline:none;
+/* =========================
+   FORM LIVRE (EDIT / ADD) - MAQUETTE
+========================= */
+.lien-retour{
+  display:inline-block;
+  margin-bottom:10px;
   font-size:14px;
+  opacity:.7;
+  margin-left: 150px;
 }
 
-.bloc-formulaire input,
-.bloc-formulaire select{
-  height:44px;
-  padding:0 12px;
+.livre-form-layout{
+  background:#fff;
+  border-radius:14px;
+  padding:24px;
+  display:flex;
+  gap:28px;
+  align-items:flex-start;
+  margin: 150px;
 }
 
-.bloc-formulaire textarea{
+.livre-form-photo{
+  width:100%;
+  min-width:280px;
+}
+
+.livre-form-label{
+  margin:0 0 10px;
+  font-size:12px;
+  opacity:.65;
+}
+
+.livre-form-photo-cadre{
+  border-radius:0px;
+  overflow:hidden;
+  background:white;
+}
+
+.livre-form-photo-img{
+  width:488px;
+
+  height:488px;
+  display:block;
+  
+}
+
+.livre-form-photo-input{
+  display:none;
+}
+
+.livre-form-photo-action{
+  display:inline-block;
+  margin-top:10px;
+  font-size:12px;
+  opacity:.75;
+  cursor:pointer;
+  text-decoration:underline;
+}
+
+.livre-form-champs{
+  width:56%;
+}
+
+.livre-form-formulaire label{
+  display:block;
+  margin:14px 0 6px;
+  font-size:12px;
+  opacity:.65;
+}
+
+.livre-form-formulaire input,
+.livre-form-formulaire textarea,
+.livre-form-formulaire select{
+  width:100%;
+  padding:12px 12px;
+  border-radius:8px;
+  border:1px solid #e6e6e6;
+  background:#f3f5f7;
+  outline:none;
+}
+
+.livre-form-formulaire textarea{
   min-height:140px;
-  padding:12px;
   resize:vertical;
 }
 
-.bloc-formulaire input:focus,
-.bloc-formulaire textarea:focus,
-.bloc-formulaire select:focus{
-  border-color: rgba(23,143,85,0.6);
-  box-shadow: 0 0 0 3px rgba(23,143,85,0.12);
-}
-
-.bloc-formulaire button{
-  margin-top:10px;
-  width:260px;
-  padding:12px 18px;
-  border-radius:12px;
-  background:#178f55;
-  color:#fff;
+.livre-form-formulaire button{
+  margin-top:18px;
+  width:100%;
+  padding:14px;
   border:none;
-  font-weight:700;
+  border-radius:10px;
   cursor:pointer;
 }
 
-@media (max-width:900px){
-  .bloc-formulaire{padding:24px}
-  .bloc-formulaire button{width:100%}
+
+
+
+
+/* =========================
+   MOBILE — PAGE ÉDITER LIVRE 
+========================= */
+@media (max-width: 820px){
+
+  /* 1) Titre + retour : on les aligne avec la carte et on garde des marges propres */
+  .page-editer-livre .bloc-formulaire{
+    padding: 0 16px;      /* marges gauche/droite mobile */
+  }
+
+  .page-editer-livre .lien-retour{
+    display: inline-block;
+    margin: 12px 0 8px;
+    font-size: 14px;
+    opacity: .7;
+  }
+
+  .page-editer-livre h1{
+    margin: 0 0 16px;
+    font-size: 26px;
+    line-height: 1.1;
+  }
+
+  /* 2) La carte : pleine largeur avec marges, et on passe en 1 colonne */
+  .page-editer-livre .livre-form-layout{
+    width: 100%;
+    margin: 0 auto;
+    padding: 16px;
+
+    /* si ta version desktop est en grid */
+    grid-template-columns: 1fr;
+    gap: 16px;
+
+    /* si ta version desktop est en flex (au cas où) */
+    display: block;
+  }
+
+  /* 3) Photo : taille maîtrisée */
+  .page-editer-livre .livre-form-photo{
+    width: 100%;
+    min-width: auto;
+  }
+
+  .page-editer-livre .livre-form-photo-cadre{
+    height: 260px;
+  }
+
+  /* 4) Form : en dessous de la photo */
+  .page-editer-livre .livre-form-champs{
+    width: 100%;
+  }
+
+  /* 5) Bouton valider full width + confortable */
+  .page-editer-livre .livre-form-formulaire button{
+    width: 100%;
+    padding: 14px;
+  }
 }
+
+
 
 /* =========================
    HEADER
@@ -881,7 +961,7 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   box-shadow: 0 0 0 3px rgba(23,143,85,0.12);
 }
 
-/* bouton ajouter livre : style “secondary” */
+/* bouton ajouter livre */
 .bouton-ajouter-livre{
   background: transparent;
   border-color:#178f55;
@@ -891,14 +971,20 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   background: rgba(23,143,85,0.08);
 }
 
-/* Formulaires ajouter/éditer : plus proches de ta charte */
+/* Formulaires ajouter/éditer */
 .bloc-formulaire{
   box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  
+  margin: 0 auto;
+  padding: 0 24px;
 }
 .bloc-formulaire h1{
   font-family: "Playfair Display", Georgia, "Times New Roman", serif;
   font-weight: 500;
+  margin-bottom: 20px;
+  margin-left: 150px;
 }
+
 
 /* bouton principal des formulaires */
 .bloc-formulaire button{
@@ -923,7 +1009,7 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
 }
 
 /* =========================
-   MESSAGERIE - CSS FINAL (adapté à tes classes)
+   MESSAGERIE - CSS FINAL 
 ========================= */
 
 .page-messagerie{
@@ -933,8 +1019,8 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
 }
 
 .messagerie-titre{
-  font-size: 38px;
-  font-weight: 700;
+  font-size: 35px;
+  font-weight: 400;
   margin: 0 0 26px;
 }
 
@@ -949,10 +1035,10 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
 /* colonne gauche */
 .messagerie-liste{
   background: #fAF9F7;
-  border-radius: 16px;
+  border-radius: 5px;
   border: 1px solid rgba(0,0,0,0.08);
   padding: 18px;
-  height: 560px;
+  height: 600px;
   overflow-y: auto;
 }
 
@@ -1016,12 +1102,13 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
 
 /* colonne droite */
 .messagerie-conversation{
-  background: #fAF9F7;
-  border-radius: 16px;
-  border: 1px solid rgba(0,0,0,0.08);
+  background: #f6f3ee;
+  border-radius: 5px;
+  /*border: 1px solid rgba(0,0,0,0.08);*/
   padding: 18px;
   height: 560px;
-  display: flex;
+  
+  display: block;
   flex-direction: column;
 }
 
@@ -1046,7 +1133,11 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   flex: 1;
   overflow-y: auto;
   padding-right: 8px;
+  
+  padding-bottom: 16px;
 }
+
+
 
 /* messages (base) */
 .message-item{
@@ -1082,39 +1173,45 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   background: #fff;
 }
 
-/* barre d’envoi */
+
 .message-form{
   display: flex;
   gap: 12px;
   align-items: stretch;
-  margin-top: 12px;
+  margin-top: 36px;
+  margin-top: auto;
 }
 
-.message-text{
+/* Le textarea prend toute la place */
+.message-form .message-text{
   flex: 1;
   min-height: 44px;
   max-height: 110px;
-  border-radius: 12px;
+   border-radius: 5px;
   border: 1px solid rgba(0,0,0,0.12);
   background: #eef3f7;
   padding: 12px 14px;
   resize: vertical;
   outline: none;
+  gap: 12px;
+  align-items: flex-end;
 }
 
-.message-text:focus{
-  border-color: rgba(23,143,85,0.6);
-  box-shadow: 0 0 0 3px rgba(23,143,85,0.12);
-}
-
-.envoyer_message{
+/* Bouton taille desktop */
+.message-form .envoyer_message{
   width: 180px;
   border: none;
-  border-radius: 12px;
+  border-radius: 5px;
   background: #178f55;
   color: #fff;
   font-weight: 700;
   cursor: pointer;
+}
+
+
+.message-text:focus{
+  border-color: rgba(23,143,85,0.6);
+  box-shadow: 0 0 0 3px rgba(23,143,85,0.12);
 }
 
 .envoyer_message:hover{
@@ -1170,4 +1267,14 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
     margin-bottom: 12px;
   }
 }
+@media (max-width: 900px){
+  .message-form{
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
 
+  .message-form .envoyer_message{
+    width: 100%;
+  }
+}

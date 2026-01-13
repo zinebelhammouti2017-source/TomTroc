@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- version mobile -->
   <title>TomTroc</title>
   <link rel="stylesheet" href="/projet4/public/css/style.css">
 </head>
