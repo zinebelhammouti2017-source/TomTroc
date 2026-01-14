@@ -236,46 +236,143 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
 .lien-voir-tous:hover{opacity:1;text-decoration:underline}
 
 /* =========================
-   PAGE LIVRE (single)
+   PAGE LIVRE (single) 
 ========================= */
-.page-livre{padding:40px 16px}
-.livre-layout{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:48px;
-  align-items:start;
+.page-livre{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 16px;
 }
-.livre-image-img{width:100%;border-radius:18px}
-.livre-image-absente{margin:0;padding:20px;background:#fff;border-radius:12px}
 
-.livre-titre{margin:0 0 8px}
-.livre-auteur{margin:0 0 18px;opacity:.8}
-.livre-separateur{border:0;border-top:1px solid rgba(0,0,0,.12);margin:18px 0 24px}
+.livre-layout{
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px;
+  align-items: start;
+}
+
+/* Image */
+.livre-image{
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.livre-image-img{
+  width: 100%;
+  height: 640px;     /* cadre fixe 
+  object-fit: cover; /* recadrage propre */
+  display: block;
+}
+
+.livre-image-absente{
+  margin: 0;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+}
+
+/* Contenu */
+.livre-titre{
+  margin: 0 0 6px;
+  font-size: 40px;
+  line-height: 1.05;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-weight: 500;
+}
+
+.livre-auteur{
+  margin: 0 0 18px;
+  opacity: .7;
+}
+
+.livre-separateur{
+  border: 0;
+  border-top: 1px solid rgba(0,0,0,.12);
+  margin: 18px 0 22px;
+}
+
 .livre-sous-titre{
-  margin:0 0 12px;
-  font-size:12px;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  opacity:.7;
+  margin: 0 0 12px;
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  opacity: .7;
 }
-.livre-description{margin:0;line-height:1.7}
-.livre-proprietaire{margin-top:24px}
+
+.livre-description{
+  margin: 0;
+  line-height: 1.7;
+  max-width: 52ch;
+}
+
+.livre-proprietaire{
+  margin-top: 26px;
+}
+
 .livre-proprietaire-label{
-  margin:0 0 10px;
-  font-size:12px;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  opacity:.7;
+  margin: 0 0 10px;
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  opacity: .7;
 }
+
 .livre-proprietaire-carte{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  padding:10px 14px;
-  border-radius:999px;
-  border:1px solid rgba(0,0,0,.12);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,.12);
+  background: rgba(255,255,255,.6);
 }
-.livre-avatar{width:28px;height:28px;border-radius:50%;background:rgba(0,0,0,.12)}
+
+.livre-avatar{
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(0,0,0,.12);
+}
+
+.livre-pseudo{
+  font-weight: 600;
+}
+
+/* Bouton (desktop) */
+.page-livre .bouton.bouton-principal{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 18px;
+  min-width: 360px;
+  padding: 14px 18px;
+  border-radius: 12px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px){
+  .livre-layout{
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .livre-image-img{
+    height: 320px;
+  }
+
+  .livre-titre{
+    font-size: 28px;
+  }
+
+  .page-livre .bouton.bouton-principal{
+    width: 100%;
+    min-width: 0;
+  }
+}
+
 
 /* =========================
    COMPOSANT : MESSAGE ERREUR
@@ -639,9 +736,6 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   .col-actions{grid-area:actions}
 }
 
-/* =========================
-   PAGES LIVRES : AJOUT / EDIT
-========================= */
 /* =========================
    FORM LIVRE (EDIT / ADD) - MAQUETTE
 ========================= */
