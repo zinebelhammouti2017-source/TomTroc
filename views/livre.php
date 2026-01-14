@@ -7,7 +7,8 @@
   <?php if (!empty($livre['image'])) : ?>
     <img
       class="livre-image-img"
-      src="/projet4/public/images/<?= htmlspecialchars($livre['image']) ?>"
+      src="/projet4/public/<?= htmlspecialchars($livre['image']) ?>"
+
       alt="Couverture du livre <?= htmlspecialchars($livre['title']) ?>"
     >
   <?php else : ?>

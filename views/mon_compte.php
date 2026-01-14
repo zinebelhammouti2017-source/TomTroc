@@ -114,7 +114,7 @@ if (isset($livresUtilisateur) && is_array($livresUtilisateur) && count($livresUt
     <div class="mon-compte-ligne">
       <div class="col-photo">
         <img
-          src="/projet4/public/images/<?php echo htmlspecialchars($livre['image']); ?>"
+          src="/projet4/public/<?= htmlspecialchars($livre['image']) ?>"
           alt="Couverture du livre"
           class="mon-compte-livre-img"
         >

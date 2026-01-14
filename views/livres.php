@@ -31,7 +31,8 @@
           <article class="livre-carte">
             <?php if (!empty($livre['image'])) : ?>
               <img
-                src="/projet4/public/images/<?= htmlspecialchars($livre['image']) ?>"
+                src="/projet4/public/<?= htmlspecialchars($livre['image']) ?>"
+                  
                 alt="Couverture du livre <?= htmlspecialchars($livre['title']) ?>"
               >
             <?php endif; ?>
