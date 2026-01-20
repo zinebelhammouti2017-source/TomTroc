@@ -8,7 +8,7 @@ class LivreController
         $id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
 
         if ($id <= 0) {
-            require_once __DIR__ . '/../views/livre_introuvable.php';
+            require_once __DIR__ . '/../views/404.php';
             return;
         }
 
@@ -16,7 +16,7 @@ class LivreController
         $livre = $bookManager->findOneById($id);
 
         if ($livre === null) {
-            require_once __DIR__ . '/../views/livre_introuvable.php';
+            require_once __DIR__ . '/../views/404.php';
             return;
         }
 

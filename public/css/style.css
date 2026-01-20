@@ -68,7 +68,7 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
 ========================= */
 .livre-carte{
   background:#fff;
-  border-radius:12px;
+  border-radius:5px;
   overflow:hidden;
   display:flex;
   flex-direction:column;
@@ -81,18 +81,18 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
 }
 .livre-carte h3{
   margin:14px 16px 6px;
-  font-size:26px;
+  font-size:22px;
   font-weight:500;
   line-height:1.1;
 }
 .livre-carte p{
   margin:0 16px 6px;
-  font-size:18px;
+  font-size:16px;
   color:#9a9a9a;
 }
 .livre-carte .livre-pseudo{
   margin:14px 16px 0;
-  font-size:14px;
+  font-size:12px;
   font-style:italic;
   color:#b0b0b0;
 }
@@ -212,7 +212,7 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   gap:24px;
   margin-bottom:26px;
 }
-.livres-entete h1{margin:0;font-size:40px;line-height:1.1}
+.livres-entete h1{margin:0;font-size:30px;line-height:1.1}
 
 .recherche-form{width:322px;flex:0 0 322px}
 .recherche-input{

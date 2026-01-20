@@ -1,0 +1,8 @@
+# Dossier des images uploadées
+public/uploads/
+
+# Fichiers locaux
+.env
+
+# Logs éventuels
+*.log

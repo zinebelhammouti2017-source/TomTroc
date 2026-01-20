@@ -27,7 +27,7 @@ class GestionLivreController
             $valeurs['description'] = $_POST['description'] ?? '';
             $valeurs['status'] = isset($_POST['status']) ? (int) $_POST['status'] : 1;
 
-            // ✅ IMPORTANT : le fichier vient de $_FILES (pas $_POST)
+            // IMPORTANT : le fichier vient de $_FILES (pas $_POST)
             $fichierImage = $_FILES['image'] ?? [];
 
             $service = new BookService();
@@ -106,10 +106,10 @@ class GestionLivreController
             $valeurs['description'] = $_POST['description'] ?? '';
             $valeurs['status'] = isset($_POST['status']) ? (int) $_POST['status'] : 1;
 
-            // ✅ IMPORTANT : fichier depuis $_FILES
+            // IMPORTANT : fichier depuis $_FILES
             $fichierImage = $_FILES['image'] ?? [];
 
-            // ✅ IMPORTANT : image actuelle à conserver si pas de nouvelle image
+            // IMPORTANT : image actuelle à conserver si pas de nouvelle image
             $imageActuelle = $livre['image'] ?? '';
 
             $service = new BookService();

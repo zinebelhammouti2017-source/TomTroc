@@ -22,7 +22,8 @@ class UploadService
     public function televerserImageLivre(array $fichier): string
     {
         // 1) erreurs PHP
-        if (!isset($fichier['error']) || $fichier['error'] !== UPLOAD_ERR_OK) {
+        if (!isset($fichier['error']) || $fichier['error'] !== UPLOAD_ERR_OK) // sécurité 
+        {
             throw new Exception("Erreur lors du téléchargement de l'image.");
         }
 
@@ -37,7 +38,7 @@ class UploadService
             throw new Exception("Fichier invalide.");
         }
 
-        // 4) vérifier le type MIME (plus fiable que l'extension)
+        // 4) vérifier le type MIME (plus fiable que l'extension) sécurité 
         $finfo = new finfo(FILEINFO_MIME_TYPE);
         $mime = $finfo->file($fichier['tmp_name']);
 
@@ -59,7 +60,7 @@ class UploadService
         }
 
         // 6) nom unique
-        $nomFichier = bin2hex(random_bytes(16)) . '.' . $extension;
+        $nomFichier = bin2hex(random_bytes(16)) . '.' . $extension; //sécurité 
 
         // 7) déplacer le fichier
         $cheminAbsolu = $this->dossierUploadAbsolu . $nomFichier;

@@ -16,7 +16,7 @@
       </div>
     <?php } ?>
 
-    <!-- ✅ UN SEUL FORM qui englobe PHOTO + CHAMPS -->
+    <!--UN SEUL FORM qui englobe PHOTO + CHAMPS -->
     <form
       method="post"
       enctype="multipart/form-data"
@@ -38,7 +38,7 @@
           >
         </div>
 
-        <!-- ✅ input file DANS le form -->
+        <!--input file DANS le form -->
         <input
           type="file"
           id="image"
