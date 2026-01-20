@@ -6,3 +6,6 @@ public/uploads/
 
 # Logs éventuels
 *.log
+
+# Configuration BDD (à ne pas versionner)
+config/bdd.php
