@@ -55,7 +55,7 @@ Il s’agit d’un **MVP** (première version fonctionnelle) développé en **PH
 
 1. Cloner le projet
 2. Configurer le fichier `config/bdd.php` à partir de `bdd.exemple.php`
-3. Importer la base de données
+3. Importer la base de données (Importer le fichier sql/sitetomtroc.sql dans phpMyAdmin.)
 4. Lancer le projet via un serveur local (XAMPP)
 
 ```bash
