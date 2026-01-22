@@ -736,25 +736,6 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   .col-actions{grid-area:actions}
 }
 
-/* =========================
-   FORM LIVRE (EDIT / ADD) 
-========================= */
-/*.lien-retour{
-  display:inline-block;
-  margin-bottom:10px;
-  font-size:14px;
-  opacity:.7;
-}*/
-
-/*.livre-form-layout{
-  background:#fff;
-  border-radius:14px;
-  padding:24px;
-  display:flex;
-  gap:28px;
-  align-items:flex-start;
-  
-}*/
 
 .livre-form-photo{
   width:100%;
@@ -1458,5 +1439,155 @@ h2{margin:0 0 28px;font-size:26px;font-weight:600;text-align:center}
   color: rgba(0,0,0,0.75);
 }
 
-/* B*
+/* =========================
+   COMPTE PUBLIC (Figma)
+========================= */
+.page-compte-public{
+  max-width:1100px;
+  margin:0 auto;
+  padding:60px 16px;
+}
+
+.compte-public-layout{
+  display:grid;
+  grid-template-columns: 360px 1fr;
+  gap:24px;
+  align-items:start;
+}
+
+/* Carte profil gauche */
+.compte-public-carte-profil{
+  background:#fff;
+  border-radius:16px;
+  padding:28px 26px;
+  text-align:center;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+
+.compte-public-avatar{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  background: rgba(0,0,0,0.10);
+  margin:0 auto 18px;
+}
+
+.compte-public-separateur{
+  border:0;
+  border-top:1px solid rgba(0,0,0,0.10);
+  margin:12px 0 18px;
+}
+
+.compte-public-pseudo{
+  margin:0 0 8px;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-weight: 500;
+}
+
+.compte-public-membre{
+  margin:0 0 18px;
+  opacity:.7;
+  font-size:13px;
+}
+
+.compte-public-biblio{
+  margin:0 0 18px;
+  font-size:13px;
+  opacity:.85;
+}
+
+.compte-public-biblio-label{
+  font-size:12px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  opacity:.7;
+}
+
+.compte-public-bouton{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  padding:14px 16px;
+  border-radius:12px;
+}
+
+/* Tableau droite */
+.compte-public-tableau{
+  background:#fff;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+
+.compte-public-entete{
+  display:grid;
+  grid-template-columns: 90px 1fr 180px 1.5fr;
+  gap:0;
+  padding:16px 18px;
+  font-size:12px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  opacity:.7;
+  border-bottom:1px solid rgba(0,0,0,0.08);
+}
+
+.compte-public-ligne{
+  display:grid;
+  grid-template-columns: 90px 1fr 180px 1.5fr;
+  padding:14px 18px;
+  text-decoration:none;
+  color:inherit;
+  border-bottom:1px solid rgba(0,0,0,0.06);
+}
+
+.compte-public-ligne:nth-child(even){
+  background: rgba(238,243,247,0.85);
+}
+
+.compte-public-ligne:hover{
+  background: rgba(23,143,85,0.06);
+}
+
+.compte-public-cell{
+  font-size:13px;
+  line-height:1.35;
+  align-self:center;
+}
+
+.compte-public-cell.photo img{
+  width:64px;
+  height:64px;
+  border-radius:10px;
+  object-fit:cover;
+  display:block;
+}
+
+.compte-public-cell.description{
+  opacity:.8;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .compte-public-layout{
+    grid-template-columns: 1fr;
+  }
+
+  .compte-public-entete,
+  .compte-public-ligne{
+    grid-template-columns: 80px 1fr;
+    row-gap:8px;
+  }
+
+  .compte-public-entete div:nth-child(3),
+  .compte-public-entete div:nth-child(4){
+    display:none;
+  }
+
+  .compte-public-ligne .compte-public-cell:nth-child(3),
+  .compte-public-ligne .compte-public-cell:nth-child(4){
+    grid-column: 1 / -1;
+  }
+}
+
+
 

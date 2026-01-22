@@ -30,14 +30,16 @@
         <?= nl2br(htmlspecialchars($livre['description'])) ?>
       </p>
 
-      <div class="livre-proprietaire">
-        <p class="livre-proprietaire-label">Proposé par</p>
+     <div class="livre-proprietaire">
+      <p class="livre-proprietaire-label">Proposé par</p>
 
-        <div class="livre-proprietaire-carte">
-          <div class="livre-avatar" aria-hidden="true"></div>
-          <span class="livre-pseudo"><?= htmlspecialchars($livre['owner_pseudo']) ?></span>
-        </div>
-      </div>
+      <a class="livre-proprietaire-carte"
+        href="/projet4/public/?page=compte-public&id=<?php echo (int)$livre['owner_id']; ?>">
+       <div class="livre-avatar" aria-hidden="true"></div>
+       <span class="livre-pseudo"><?php echo htmlspecialchars($livre['owner_pseudo']); ?></span>
+      </a>
+     </div>
+
 
       <a class="bouton bouton-principal"
         href="/projet4/public/?page=demarrer-conversation&user_id=<?php echo (int) $livre['owner_id']; ?>">

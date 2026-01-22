@@ -26,9 +26,9 @@
       <a class="site-nav-lien" href="/projet4/public/?page=messagerie">Messagerie</a>
       <a class="site-nav-lien" href="/projet4/public/?page=mon-compte">Mon compte</a>
 
-      <?php if (isset($_SESSION['utilisateur'])): ?>
+      <?php if (isset($_SESSION['user_id'])) : ?>
         <a class="site-nav-lien" href="/projet4/public/?page=deconnexion">Déconnexion</a>
-      <?php else: ?>
+      <?php else : ?>
         <a class="site-nav-lien" href="/projet4/public/?page=connexion">Connexion</a>
       <?php endif; ?>
     </nav>

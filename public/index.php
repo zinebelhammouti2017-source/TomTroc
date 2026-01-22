@@ -13,6 +13,8 @@ require_once __DIR__ . '/../Controllers/InscriptionController.php';
 require_once __DIR__ . '/../Controllers/MonCompteController.php';
 require_once __DIR__ . '/../Controllers/GestionLivreController.php';
 require_once __DIR__ . '/../Controllers/MessagerieController.php';
+require_once __DIR__ . '/../Controllers/ComptePublicController.php';
+require_once __DIR__ . '/../Controllers/DeconnexionController.php';
 
 $page = $_GET['page'] ?? 'accueil';
 
@@ -32,6 +34,11 @@ switch ($page) {
         $controller->afficherLivres();
         break;
 
+    case 'compte-public':
+        $controller = new ComptePublicController();
+        $controller->afficher();
+        break;
+    
     case 'connexion':
         $controller = new ConnexionController();
         $controller->afficher();
@@ -67,21 +74,25 @@ switch ($page) {
         $controller->changerDisponibilite();
         break;
 
-  case 'messagerie':
-    $controller = new MessagerieController();
-    $controller->afficher();
-    break;
+    case 'messagerie':
+        $controller = new MessagerieController();
+        $controller->afficher();
+        break;
 
-case 'envoyer-message':
-    $controller = new MessagerieController();
-    $controller->envoyerMessage();
-    break;
+    case 'envoyer-message':
+        $controller = new MessagerieController();
+        $controller->envoyerMessage();
+        break;
 
-case 'demarrer-conversation':
-    $controller = new MessagerieController();
-    $controller->demarrerConversation();
-    break;
-    
+    case 'demarrer-conversation':
+       $controller = new MessagerieController();
+       $controller->demarrerConversation();
+       break;
+
+    case 'deconnexion':
+       $controller = new DeconnexionController();
+       $controller->deconnecter();
+       break;
 
     default:
         http_response_code(404);
